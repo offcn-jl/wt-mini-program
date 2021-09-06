@@ -56,7 +56,7 @@ Page({
     getPhoneNumber: function (event) {
         getApp().methods.login({ event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${this.data.config.crmEventFormSid};中公证件照;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
             this.setData({ phone, openid });
-            if (e.currentTarget.dataset.bindtap === 'album') {
+            if (event.currentTarget.dataset.bindtap === 'album') {
                 this.album();
             } else {
                 this.camera();
