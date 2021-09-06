@@ -1,0 +1,26 @@
+{
+  "pages":[
+    "pages/index/index",
+    
+    "pages/photo-processing/index/index",
+    "pages/photo-processing/configs/index",
+    "pages/photo-processing/detail/index",
+    "pages/photo-processing/detail/camera/index",
+    "pages/photo-processing/detail/preview/index",
+    "pages/photo-processing/detail/preview/save-image/index",
+    "pages/photo-processing/change-background/index",
+    "pages/photo-processing/cropper/index",
+    "pages/photo-processing/cropper/preview/index",
+    "pages/photo-processing/album/index",
+    "pages/photo-processing/album/detail/index",
+    
+    "pages/login-demo/index",
+
+    "handler"
+  ],
+  "window":{
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

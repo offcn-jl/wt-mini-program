@@ -1,0 +1,11 @@
+<!--pages/index/index.wxml-->
+<header title="首页" suffixStr="{{suffixStr}}" alwaysShow></header>
+
+<view style="margin-top:20vh;width:100vw;text-align:center;">首页 Demo</view>
+
+<navigator style="margin-top:4vh;text-align:center;" url="/pages/photo-processing/index/index{{suffixStr?'?'+suffixStr:''}}">中公证件照</navigator>
+
+<navigator style="margin-top:4vh;text-align:center;" url="/pages/login-demo/index{{suffixStr?'?'+suffixStr:''}}">登陆及登陆态维护 Demo</navigator>
+
+<!-- 推广后缀 -->
+<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
