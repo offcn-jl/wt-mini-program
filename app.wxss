@@ -42,3 +42,14 @@ button.btn {
 button.btn:after {
   display: none;
 }
+
+.button-custom {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.w100 {
+  display: block;
+  width: 100vw !important;
+}

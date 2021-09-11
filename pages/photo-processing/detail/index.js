@@ -10,7 +10,6 @@ Page({
         openid: '', // 用户 openid
         phone: '', // 用户手机号码
 
-        id: '',
         config: {},
     },
 
