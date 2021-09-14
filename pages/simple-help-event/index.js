@@ -50,7 +50,8 @@ Page({
                             crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};简易助力活动;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => {
                                 this.setData({ phone, openid });
                                 // 判断当前是新参与用户还是被邀请用户，并转到对应的页面
-                                if (typeof options.inviter !== 'undefined') {
+                                // 如果邀请人是当前用户，则不进行跳转
+                                if (typeof options.inviter !== 'undefined' && options.inviter !== this.data.phone) {
                                     // 被邀请用户, 转到邀请页面
                                     this.setData({ page: 'invite', inviter: options.inviter });
                                 } else {
