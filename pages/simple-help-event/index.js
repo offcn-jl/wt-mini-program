@@ -13,7 +13,7 @@ Page({
 
         config: {},
 
-        page: 'detail', // 当前页面
+        page: 'index', // 当前页面
         inviter: '', // 邀请者
         log: [], // 邀请记录
     },
