@@ -122,6 +122,25 @@ Page({
         });
     },
 
+    // 切换页面
+    switchPage: function (event) {
+        if (event.currentTarget.dataset.bindtap === 'join') {
+            // join
+            // 跳转到详情页面
+            this.setData({ page: 'detail' });
+        } else {
+            // doHelp
+            // 提交助力记录
+            getApp().methods.requsetWithCode({
+                path: `/simple-help-event/do-help/${this.data.config.id}`,
+                method: 'POST',
+                queryData: { inviter: this.data.inviter, invitee: this.data.phone },
+                // 助力成功后，弹出提示，待提示消失后，跳转到首页引导用户参与活动
+                callback: res => wx.showToast({ title: res.errorMessage, icon: 'none' }) && setTimeout(() => { wx.redirectTo({ url: `index?id=${this.data.config.id}${this.data.suffixStr ? `&${this.data.suffixStr}` : ''}` }) }, 3e3),
+            });
+        }
+    },
+
     // 领取奖品
     getReward: function () {
         switch (this.data.config.reward.type) {

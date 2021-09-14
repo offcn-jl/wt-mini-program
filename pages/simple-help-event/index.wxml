@@ -2,14 +2,20 @@
 <header id="header" title="{{config.name}}" suffixStr="{{suffixStr}}" nav></header>
 
 <!-- 首页 -->
-<button wx:if="{{page === 'index'}}" class="button-custom w100" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="join">
+<!-- 登录状态无效，调用登陆函数进行登陆操作后切换页面 -->
+<button wx:if="{{page === 'index' && !phone}}" class="button-custom w100" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="join">
     <image class="w100" mode="widthFix" src="{{config.indexImage}}"></image>
 </button>
+<!-- 登录状态有效，调用切换页面函数切换页面 -->
+<image wx:if="{{page === 'index' && phone}}" class="w100" mode="widthFix" src="{{config.indexImage}}" bindtap="switchPage" data-bindtap="join"></image>
 
 <!-- 邀请页 -->
-<button wx:if="{{page === 'invite'}}" class="button-custom w100" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="doHelp">
+<!-- 登录状态无效，调用登陆函数进行登陆操作后切换页面 -->
+<button wx:if="{{page === 'invite' && !phone}}" class="button-custom w100" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="doHelp">
     <image class="w100" mode="widthFix" src="{{config.inviteImage}}"></image>
 </button>
+<!-- 登录状态有效，调用切换页面函数切换页面 -->
+<image wx:if="{{page === 'invite' && phone}}" class="w100" mode="widthFix" src="{{config.inviteImage}}" bindtap="switchPage" data-bindtap="doHelp"></image>
 
 <!-- 助力记录页面 -->
 <view wx:if="{{page === 'detail'}}" class="detail">
