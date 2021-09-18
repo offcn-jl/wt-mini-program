@@ -1,0 +1,123 @@
+/* pages/announcement/index.wxss */
+/* 底部广告区域 */
+.advertising {
+    position: fixed;
+    width: 100vw;
+    bottom: 179rpx;
+}
+
+/* 底部操作区域 */
+.bottom {
+    position: fixed;
+    width: 100vw;
+    height: 180rpx;
+    bottom: 0;
+    background: floralwhite;
+    padding-top: 30rpx;
+}
+
+.iconCon {
+    float: right;
+}
+
+.iconCon .coverText {
+    font-size: 26rpx;
+    line-height: 28rpx;
+    text-align: center;
+    padding-top: 4rpx;
+}
+
+.coverWeixin {
+    width: 55rpx;
+}
+
+.borderLine {
+    width: 2rpx;
+    height: 100rpx;
+    background: #eeeeee;
+    margin: 0 20rpx;
+
+    float: right;
+}
+
+.coverWeixin .coverIcon {
+    display: block;
+    margin: 0 auto;
+    width: 45rpx;
+    height: 45rpx;
+    padding: 5rpx 0;
+}
+
+.bottom .view {
+    margin-top: 10rpx;
+    margin-right: 5vw;
+    width: 75vw;
+    background: linear-gradient(to right, #ff5b5d, #ff552d);
+    color: #fff;
+    float: right;
+}
+
+.placeholder {
+    position: static;
+    z-index: -1;
+}
+
+.tabbar {
+    width: 750rpx;
+    position: absolute;
+    bottom: 0;
+}
+
+.tabbar-bg {
+    position: fixed;
+    top: 0;
+    width: 750rpx;
+    bottom: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    transition: all 0s ease 0.3s;
+    z-index: 9999999;
+}
+
+.tabbar-bg.show {
+    transition: all 0s ease 0s;
+    transform: translateX(0);
+}
+
+.tabbar {
+    overflow: hidden;
+    border-radius: 20rpx 20rpx 0 0;
+    background: #f7f7f7;
+    transition: all 0.3s ease 0s;
+    transform: translateY(100%);
+}
+
+.tabbar-bg.show .tabbar {
+    transform: translateY(0);
+}
+
+.tabbar view {
+    background: #ffffff;
+    font-size: 32rpx;
+    text-align: center;
+    height: 122rpx;
+    line-height: 122rpx;
+}
+
+.tabbar view button {
+    background: none;
+    height: 122rpx;
+    line-height: 122rpx;
+}
+
+.tabbar view.line {
+    height: 1px;
+    background: #f7f7f7;
+}
+
+.tabbar view.cancel {
+    border: 0;
+    margin-top: 20rpx;
+    padding-bottom: 35rpx;
+}

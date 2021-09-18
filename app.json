@@ -2,6 +2,8 @@
   "pages":[
     "pages/index/index",
     
+    "pages/announcement/index",
+    
     "pages/simple-help-event/index",
     
     "pages/photo-processing/index/index",
