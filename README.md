@@ -29,3 +29,7 @@ request合法域名:
 ```
 https://19.offcn.com;https://appopenbg.offcn.com;https://bda.tencentcloudapi.com;https://fmu.tencentcloudapi.com;https://iai.tencentcloudapi.com;https://wt-backend.t.eoffcn.com;https://zg99.offcn.com;
 ```
+downloadFile合法域名:
+```
+https://appopenoss.offcn.com;
+```
