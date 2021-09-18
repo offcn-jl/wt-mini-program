@@ -20,7 +20,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
-        options.id = '14' // 测试
+        // options.id = '14' // 测试
         if (typeof options.id !== 'string') {
             getApp().methods.handleError({ err: options, title: "出错啦", content: "缺少 id 参数", reLaunch: true });
             return;
