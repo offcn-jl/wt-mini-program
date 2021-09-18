@@ -61,7 +61,7 @@ page {
     line-height: 48rpx;
     border-radius: 30rpx;
     overflow: hidden;
-    margin-bottom: 30rpx;
+    margin-bottom: 23rpx;
 }
 
 .crop image {
@@ -107,6 +107,7 @@ page {
 }
 .zg_zjlist_left{
     width: 320rpx;
+    height: 330rpx;
 }
 .zg_zjlist_right{
     width: 320rpx;
