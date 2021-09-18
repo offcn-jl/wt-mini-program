@@ -24,7 +24,11 @@
 }
 
 .categories {
-    padding: 0rpx 0rpx 46rpx 8rpx;
+    margin-right: 20rpx;
+    width: 170rpx;
+    min-height: 90%;
+    background: #fbfbfb;
+    overflow-y: auto;
 }
 
 .row {
@@ -39,4 +43,23 @@
     line-height: 70rpx;
     border-bottom: 1px solid #f2f2f5;
     margin-bottom: 15rpx;
+}
+
+.zg_tablist {
+    margin: 0 auto;
+    width: 700rpx;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.zg_right {
+    flex: 1;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

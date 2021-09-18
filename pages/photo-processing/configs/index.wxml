@@ -1,13 +1,15 @@
-<image class="bg" src="https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-header.png"></image>
+
 <view class="header" style="margin-top: {{statusBarHeight}}px">
     <navigator hoverClass="none" openType="navigateBack">
-        <image class="arrow" src="https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/public/arrow-left-white.png"></image>
+        <image class="arrow" src="https://www.offcn.com/zg/wltg/2021zpjc/zg_pic12.png"></image>
     </navigator>
-    选规格拍照
+    <view class="tit">选规格拍照</view>
 </view>
 <view class="search">
+   <view class="search_cont">
     <image src="https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/public/search-DEE2EA.png"></image>
-    <input bindinput="input" confirmType="search" placeholder="搜索您想拍摄的规格名称、尺寸" placeholderClass="placeholder"></input>
+    <input bindinput="input" confirmType="search" placeholder="搜索规格名称/尺寸" placeholderClass="placeholder"></input>
+   </view>
 </view>
 <view class="content">
     <configs bind:chooseConfig="gotoDetail"></configs>
@@ -21,5 +23,3 @@
     </scroll-view>
 </view>
 
-<!-- 推广后缀 -->
-<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>

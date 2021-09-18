@@ -1,5 +1,5 @@
-<view bindtap="choose" class="spec">
-    <image class="image" src="https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/public/photo.png"></image>
+<view bindtap="choose" class="spec list_spec">
+    <image class="image" src="https://www.offcn.com/zg/wltg/2021zpjc/zg_pic4.png"></image>
     <view class="right">
         <view class="name">{{config.name}}</view>
         <view class="detail">
