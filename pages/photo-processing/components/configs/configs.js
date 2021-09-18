@@ -18,12 +18,12 @@ Component({
         // 属性名使用 epr 考试项目 id
         // 可以自动匹配到考试项目上
         icons: {
-            '0': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-tycc.png',
-            '1': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-gwy.png',
-            '2': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-sydw.png',
-            '3': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-jszgz.png',
-            '4': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-tgjs.png',
-            '5': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-qtks.png',
+            // '0': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-tycc.png',
+            // '1': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-gwy.png',
+            // '2': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-sydw.png',
+            // '3': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-jszgz.png',
+            // '4': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-tgjs.png',
+            // '5': 'https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/configs-qtks.png',
         },
         categories: [],
         currentCategory: {},

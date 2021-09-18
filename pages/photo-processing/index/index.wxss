@@ -6,26 +6,23 @@ page {
 .camera {
     position: relative;
     display: block;
-    width: 670rpx;
-    height: 220rpx;
-    margin: 30rpx auto;
+    width: 320rpx;
+    height:330rpx;
     font-size: 34rpx;
     color: #FFFFFF;
     font-weight: bold;
-    text-shadow: 0 0 16px #0F57E7;
     padding: 66rpx 40rpx;
     line-height: 48rpx;
     border-radius: 30rpx;
     overflow: hidden;
-    box-shadow: 0 4rpx 24rpx 0 #DBE8FF;
 }
 
 .camera image {
     position: absolute;
     top: 0;
     left: 0;
-    width: 670rpx;
-    height: 220rpx;
+    width: 320rpx;
+    height:330rpx;
     z-index: -1;
 }
 
@@ -34,16 +31,13 @@ page {
     display: inline-block;
     width: 320rpx;
     height: 150rpx;
-    margin-left: 40rpx;
     font-size: 30rpx;
     color: #FFFFFF;
     font-weight: bold;
     padding: 40rpx;
     line-height: 48rpx;
-    text-shadow: 0 0 10px rgba(255,104,0,0.70);
     border-radius: 30rpx;
     overflow: hidden;
-    box-shadow: 0 2px 18rpx 0 rgba(255,237,148,0.70);
 }
 
 .color image {
@@ -60,16 +54,14 @@ page {
     display: inline-block;
     width: 320rpx;
     height: 150rpx;
-    margin-left: 30rpx;
     font-size: 30rpx;
     color: #FFFFFF;
     font-weight: bold;
     padding: 40rpx;
     line-height: 48rpx;
-    text-shadow: 0 0 10px rgba(28,171,179,0.80);
     border-radius: 30rpx;
     overflow: hidden;
-    box-shadow: 0 2px 18rpx 0 #D1F4F0;
+    margin-bottom: 30rpx;
 }
 
 .crop image {
@@ -104,4 +96,26 @@ page {
     width: 40rpx;
     vertical-align: middle;
     margin-top: -2rpx;
+}
+
+.zg_zjlist {
+    margin: 0 auto;
+    width: 673rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.zg_zjlist_left{
+    width: 320rpx;
+}
+.zg_zjlist_right{
+    width: 320rpx;
+}
+.hot-list{
+    margin: 0 auto;
+    width: 673rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
