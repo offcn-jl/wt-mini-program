@@ -27,9 +27,18 @@
 ## 域名白名单
 request合法域名:
 ```
-https://19.offcn.com;https://appopenbg.offcn.com;https://bda.tencentcloudapi.com;https://fmu.tencentcloudapi.com;https://iai.tencentcloudapi.com;https://wt-backend.t.eoffcn.com;https://zg99.offcn.com;
+https://appopenbg.offcn.com;https://bda.tencentcloudapi.com;https://fmu.tencentcloudapi.com;https://iai.tencentcloudapi.com;https://wt-backend.t.eoffcn.com;
 ```
+> 用途：  
+> https://appopenbg.offcn.com; ->> 综合活动平台 - 基础接口 - 生产环境  
+> https://bda.tencentcloudapi.com; ->> 中公证件照功能 - 人像分割  
+> https://fmu.tencentcloudapi.com; ->> 中公证件照功能 - 人脸美颜  
+> https://iai.tencentcloudapi.com; ->> 中公证件照功能 - 人脸检测与分析  
+> https://wt-backend.t.eoffcn.com; ->> 综合活动平台 - 基础接口 - 测试环境  
+
 downloadFile合法域名:
 ```
 https://appopenoss.offcn.com;
 ```
+> 用途：  
+> https://appopenoss.offcn.com; ->> 简易助力活动 - 海报模板下载
