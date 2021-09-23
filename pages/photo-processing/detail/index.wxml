@@ -48,6 +48,8 @@
             <view class="zg_name">{{config.description}}</view>
         </view>
     </view>
+    <!-- 推广后缀 -->
+    <view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
 </view>
 <view class="bottom">
     <block wx:if="{{!phone}}">
@@ -63,4 +65,3 @@
         拍摄</button>
     </block>
 </view>
-

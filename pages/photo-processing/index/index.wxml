@@ -35,3 +35,5 @@
     <config bind:chooseConfig="gotoDetail" config="{{item}}" wx:for="{{configs}}" wx:key="index" style="width:48%"></config>
 </view>
 
+<!-- 推广后缀 --> 
+<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view> 
