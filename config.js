@@ -8,9 +8,9 @@ const environment = wx.getAccountInfoSync().miniProgram.envVersion ? wx.getAccou
 // 小程序配置
 module.exports = {
   // 本小程序的 AppID
-  appid: 'wx59b01fe628c2f156',
+  appid: 'wxb04ce8efcd61db65',
   // 本小程序的 原始ID
-  username: 'gh_3cc5e28cbc51',
+  username: 'gh_05b6c951247a',
   // 运行环境
   environment,
   // 接口路径
