@@ -13,8 +13,8 @@
 <view class="bottom">
     <!-- 查看原文 -->
     <!-- 区分登陆状态和未登录状态 -->
-    <button wx:if="{{phone}}" class="view" bindtap="view">查看原文</button>
-    <button wx:if="{{!phone}}" class="view" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">查看原文</button>
+    <button wx:if="{{phone}}" class="view" bindtap="view">查看全文</button>
+    <button wx:if="{{!phone}}" class="view" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">查看全文</button>
     <!-- 分割线 -->
     <view class="borderLine"></view>
     <!-- 转发 -->

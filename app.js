@@ -195,10 +195,10 @@ App({
      * @param {*} remark 备注
      * @param {*} callback 回调函数
      */
-    login({ event, crmEventFormSID, suffix, remark, callback }) { // fixme 更正参数
+    login({ event, crmEventFormSID, suffix, remark, callback }) {
       // 判断是否授权使用手机号
       if (event.detail.errMsg !== 'getPhoneNumber:ok') {
-        getApp().methods.handleError({ err: event.detail.errMsg, title: "出错啦", content: "需要您同意授权获取手机号码后才能完成注册～" })
+        getApp().methods.handleError({ err: event.detail.errMsg, title: "出错啦", content: "本功能需要您授权登陆后方可使用" })
         return
       }
 
