@@ -80,6 +80,7 @@ https://hn.zgjfks.com
 https://hu.offcn.com
 https://hu.yixue99.com
 https://hu.zgjfks.com
+https://i.offcn.com
 https://jl.offcn.com
 https://jl.zgjfks.com
 https://jl.zgsydw.com
@@ -146,6 +147,7 @@ https://msx.zgjfks.com
 https://mtj.zgjfks.com
 https://myn.zgjfks.com
 https://mzj.zgjfks.com
+https://nm.offcn.com
 https://nm.zgjfks.com
 https://nx.offcn.com
 https://offcn.sobot.com
