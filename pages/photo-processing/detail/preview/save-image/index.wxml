@@ -40,7 +40,7 @@
 </view>
 
 <!-- 推广后缀 -->
-<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+<view class="suffix">{{suffixStr}}</view>
 
 <button class="btn btn-share" openType="share">
     <image src="https://jl.offcn.com/zg/ty/images/exam-helper-mini-program/photo-processing/share-tip.png"></image>

@@ -25,7 +25,7 @@
 </view>
 
 <!-- 推广后缀 -->
-<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+<view class="suffix">{{suffixStr}}</view>
 
 <!-- 占位元素 -->
 <image wx:if="{{config.advertisementConfig.enable}}" class="advertising w100 placeholder" mode="widthFix" src="{{config.advertisementConfig.picture}}" bindtap="advertising"></image>

@@ -4,7 +4,7 @@
 <view class="main" style="top:{{statusBarHeight+44}}px">
     <select-photo bgColor="{{color}}" bind:pickPhoto="pickPhoto" src="{{src}}"></select-photo>
     <!-- 推广后缀 -->
-    <view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+    <view class="suffix">{{suffixStr}}</view>
 </view>
 <view class="bottom">
     <view class="colors">

@@ -49,7 +49,7 @@
         </view>
     </view>
     <!-- 推广后缀 -->
-    <view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+    <view class="suffix">{{suffixStr}}</view>
 </view>
 <view class="bottom">
     <block wx:if="{{!phone}}">

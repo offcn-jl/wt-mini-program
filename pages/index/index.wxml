@@ -8,4 +8,4 @@
 <navigator style="margin-top:4vh;text-align:center;" url="/pages/login-demo/index{{suffixStr?'?'+suffixStr:''}}">登陆及登陆态维护 Demo</navigator>
 
 <!-- 推广后缀 -->
-<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+<view class="suffix">{{suffixStr}}</view>

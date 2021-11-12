@@ -14,4 +14,4 @@
 <button style="margin-top:2vh;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">一直显示的获取手机号码按钮</button>
 
 <!-- 推广后缀 -->
-<view class="suffix">推广后缀：{{suffixStr?suffixStr:'无'}}</view>
+<view class="suffix">{{suffixStr}}</view>
