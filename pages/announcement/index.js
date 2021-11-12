@@ -134,89 +134,73 @@ Page({
                     success: function (res) {
                         // 裁剪并绘制公告预览
                         context.drawImage(res.path, 0, 0, res.width, res.height * (900 / 1380), 94, 172, 900, 1380)
-                        // 转短链接
                         let url = `https://appopen.offcn.com/wechat/mini-program/handler/?appid=${getApp().globalData.config.appid}&username=${getApp().globalData.config.username}&path=pages/announcement/index&id=${_this.data.config.id}${_this.data.suffixStr ? `&${_this.data.suffixStr}` : ''}`;
-                        wx.request({
-                            method: "POST",
-                            url: getApp().globalData.config.apis.base.replace("wechat/mini-program", "url-shortener"),
-                            data: { URL: url, Referer: "加推" },
-                            complete: res => {
-                                console.log(res)
-                                if (res.statusCode === 200 && res.data.success) {
-                                    // 生成短链接成功
-                                    url = res.data.data.ShortUrl;
-                                } else {
-                                    // 生成短链接失败
-                                    console.log("生成短链接失败", res.data);
-                                }
-                                // 生成小程序码
-                                const QR = require('../../utils/weapp-qrcode.js');
-                                var imgData = QR.drawImg(url, {
-                                    version: 1,
-                                    errorCorrectLevel: 'M',
-                                    color: '#af1417', // 支持#000,#000000 或者 rgb(0,0,0)
-                                    background: '#fff', // 支持#000,#000000 或者 rgb(0,0,0)
-                                    padding: 0, // 设置padding 为二维码方格的个数 ( 边框 )
-                                    size: 230
-                                })
-                                _this.setData({
-                                    srcBase64: imgData
-                                })
-                                // 将 BASE64编码的 图片保存到临时文件 用于绘制到 Canvas
-                                const fs = wx.getFileSystemManager();
-                                const filePath = `${wx.env.USER_DATA_PATH}/announcement-pic-${Date.now()}.gif`;
-                                fs.writeFile({
-                                    filePath: filePath,
-                                    data: wx.base64ToArrayBuffer(imgData.substring(imgData.indexOf(',') + 1)),
-                                    encoding: "binary",
-                                    success: function () {
-                                        // 绘制二维码
-                                        context.drawImage(filePath, 420, 1600, 230, 230);
-                                        // 结束绘制
-                                        context.draw(false, function () {
-                                            // 删除临时文件
-                                            setTimeout(()=>{fs.unlinkSync(filePath)},1e3);
-                                            // 将 cavas 保存到 临时文件
-                                            wx.canvasToTempFilePath({
-                                                canvasId: 'mycanvas',
-                                                success: function (res) {
-                                                    // 关闭操作框和 loading
-                                                    _this.setData({ actionSheet: false });
-                                                    wx.hideLoading();
-                                                    // 弹出分享图片窗口
-                                                    wx.showShareImageMenu({ path: res.tempFilePath });
-                                                },
-                                                fail: err => {
-                                                    wx.hideLoading(); // 隐藏 loading
-                                                    getApp().methods.handleError({ err: err, title: "出错啦", content: '生成海报失败，请稍后再试' });
-                                                }
-                                            });
-                                        });
-                                    },
-                                    fail: function (err) {
-                                        // 判断错误类型
-                                        if (err.errMsg === 'writeFile:fail the maximum size of the file storage limit is exceeded') {
-                                            // 错误类型是临时文件大小超过限制
-                                            // 进行清理操作
-                                            const fs = wx.getFileSystemManager();
-                                            fs.readdir({
-                                                dirPath: wx.env.USER_DATA_PATH,
-                                                success: res => {
-                                                    res.files.forEach(value => {
-                                                        try {
-                                                            // 清理掉临时文件
-                                                            if (value.indexOf('announcement') !== -1) fs.unlinkSync(`${wx.env.USER_DATA_PATH}/${value}`);
-                                                        } catch (err) {
-                                                            console.error(err);
-                                                        }
-                                                    })
+                        // 生成小程序码
+                        const QR = require('../../utils/weapp-qrcode.js');
+                        var imgData = QR.drawImg(url, {
+                            version: 1,
+                            errorCorrectLevel: 'M',
+                            color: '#af1417', // 支持#000,#000000 或者 rgb(0,0,0)
+                            background: '#fff', // 支持#000,#000000 或者 rgb(0,0,0)
+                            padding: 0, // 设置padding 为二维码方格的个数 ( 边框 )
+                            size: 230
+                        })
+                        _this.setData({
+                            srcBase64: imgData
+                        })
+                        // 将 BASE64编码的 图片保存到临时文件 用于绘制到 Canvas
+                        const fs = wx.getFileSystemManager();
+                        const filePath = `${wx.env.USER_DATA_PATH}/announcement-pic-${Date.now()}.gif`;
+                        fs.writeFile({
+                            filePath: filePath,
+                            data: wx.base64ToArrayBuffer(imgData.substring(imgData.indexOf(',') + 1)),
+                            encoding: "binary",
+                            success: function () {
+                                // 绘制二维码
+                                context.drawImage(filePath, 420, 1600, 230, 230);
+                                // 结束绘制
+                                context.draw(false, function () {
+                                    // 删除临时文件
+                                    setTimeout(() => { fs.unlinkSync(filePath) }, 1e3);
+                                    // 将 cavas 保存到 临时文件
+                                    wx.canvasToTempFilePath({
+                                        canvasId: 'mycanvas',
+                                        success: function (res) {
+                                            // 关闭操作框和 loading
+                                            _this.setData({ actionSheet: false });
+                                            wx.hideLoading();
+                                            // 弹出分享图片窗口
+                                            wx.showShareImageMenu({ path: res.tempFilePath });
+                                        },
+                                        fail: err => {
+                                            wx.hideLoading(); // 隐藏 loading
+                                            getApp().methods.handleError({ err: err, title: "出错啦", content: '生成海报失败，请稍后再试' });
+                                        }
+                                    });
+                                });
+                            },
+                            fail: function (err) {
+                                // 判断错误类型
+                                if (err.errMsg === 'writeFile:fail the maximum size of the file storage limit is exceeded') {
+                                    // 错误类型是临时文件大小超过限制
+                                    // 进行清理操作
+                                    const fs = wx.getFileSystemManager();
+                                    fs.readdir({
+                                        dirPath: wx.env.USER_DATA_PATH,
+                                        success: res => {
+                                            res.files.forEach(value => {
+                                                try {
+                                                    // 清理掉临时文件
+                                                    if (value.indexOf('announcement') !== -1) fs.unlinkSync(`${wx.env.USER_DATA_PATH}/${value}`);
+                                                } catch (err) {
+                                                    console.error(err);
                                                 }
                                             })
                                         }
-                                        wx.hideLoading(); // 隐藏 loading
-                                        getApp().methods.handleError({ err: err, title: "出错啦", content: "生成海报出错, 请稍后再试" });
-                                    }
-                                });
+                                    })
+                                }
+                                wx.hideLoading(); // 隐藏 loading
+                                getApp().methods.handleError({ err: err, title: "出错啦", content: "生成海报出错, 请稍后再试" });
                             }
                         });
                     },
