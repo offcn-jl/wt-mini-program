@@ -3,26 +3,50 @@
 
 <image class="w100" mode="widthFix" src="{{config.previewImage}}"></image>
 
+<view class="bottom">
+    <view class="shareWap">
+        <image src="{{contactInformation.Avatar}}" class="coverImg" mode="widthFix"></image>
+        <view class="coverName">
+            <view class="nameText">
+                {{contactInformation.Name}}
+            </view>
+            <view class="namePosition">
+                欢迎垂询
+            </view>
+        </view>
+        <view class="iconCon coverOnlineConsulting" bindtap="gotoOnlineConsulting">
+            <image src="https://news01.offcn.com/jl/2021/1116/20211116050741819.png" class="coverIcon"></image>
+            <view class="coverText">在线咨询</view>
+        </view>
+        <view class="borderLine"></view>
+        <view class="iconCon coverHaibao">
+            <cell id="wx-work" styleType="2" bubbleColor="ff5b5d" bind:startmessage='startmessage' bind:completemessage="completemessage" plugid='{{contactInformation.WechatWorkContactMePlugID}}' />
+            <view class="coverText" style="margin-top:-30rpx;">加微信</view>
+        </view>
+        <view class="borderLine"></view>
+        <view class="iconCon coverPhone" bindtap="makePhoneCall">
+            <image src="https://news01.offcn.com/jl/2021/1116/20211116051543150.png" class="coverIcon"></image>
+            <view class="coverText">打电话</view>
+        </view>
+        <view class="borderLine"></view>
+        <view class="iconCon coverWeixin" bindtap="showActionSheet">
+            <image src="https://news01.offcn.com/jl/2021/1116/20211116051646351.png" class="coverIcon"></image>
+            <view class="coverText">转发</view>
+        </view>
+    </view>
+
+    <!-- 查看原文 -->
+    <!-- 区分登陆状态和未登录状态 -->
+    <button wx:if="{{phone}}" class="view" bindtap="view">查看全文</button>
+    <button wx:if="{{!phone}}" class="view" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">查看全文</button>
+</view>
+
 <!-- 广告 收集手机号 -->
 <button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" open-type="getPhoneNumber" bindgetphonenumber="goAdvertisingAfterLogin">
     <image class="w100" mode="widthFix" src="{{config.advertisementConfig.picture}}"></image>
 </button>
 <!-- 广告 不收集手机号 -->
 <image wx:if="{{config.advertisementConfig.enable && ( !config.advertisementConfig.collectPhone || (config.advertisementConfig.collectPhone && phone))}}" class="advertising w100" mode="widthFix" src="{{config.advertisementConfig.picture}}" bindtap="goAdvertising"></image>
-
-<view class="bottom">
-    <!-- 查看原文 -->
-    <!-- 区分登陆状态和未登录状态 -->
-    <button wx:if="{{phone}}" class="view" bindtap="view">查看全文</button>
-    <button wx:if="{{!phone}}" class="view" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">查看全文</button>
-    <!-- 分割线 -->
-    <view class="borderLine"></view>
-    <!-- 转发 -->
-    <view class="iconCon coverWeixin" bindtap="showActionSheet">
-        <image src="https://appopenoss.offcn.com/statics/image/share.png" class="coverIcon"></image>
-        <view class="coverText">转发</view>
-    </view>
-</view>
 
 <!-- 推广后缀 -->
 <view class="suffix">{{suffixStr}}</view>

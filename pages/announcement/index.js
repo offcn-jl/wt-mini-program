@@ -8,6 +8,8 @@ Page({
         suffix: {}, // 推广后缀
         suffixStr: '', // 推广后缀字符串
 
+        contactInformation: {}, // 联系方式
+
         openid: '', // 用户 openid
         phone: '', // 用户手机号码
 
@@ -25,7 +27,9 @@ Page({
             getApp().methods.handleError({ err: options, title: "出错啦", content: "缺少 id 参数", reLaunch: true });
             return;
         }
-        this.setData(await getApp().methods.getSuffix(options)); // 获取后缀信息
+        const suffixInfo = await getApp().methods.getSuffix(options); // 获取后缀信息
+        this.setData(suffixInfo); // 保存后缀信息
+        this.setData({ contactInformation: await getApp().methods.getContactInformation(suffixInfo) }); // 获取推广信息
 
         // 获取配置详情
         wx.showLoading({ title: '获取详情', mask: true })
@@ -215,6 +219,18 @@ Page({
                 getApp().methods.handleError({ err: err, title: "出错啦", content: '生成海报失败，请稍后再试' });
             }
         });
+    },
+
+    // makePhoneCall 打电话
+    makePhoneCall: function () {
+        wx.makePhoneCall({
+            phoneNumber: String(this.data.contactInformation.ConsultationPhone)
+        })
+    },
+
+    // gotoOnlineConsulting 打开在线咨询
+    gotoOnlineConsulting: function () {
+        wx.navigateTo({ url: `/pages/sobot/auto${this.data.suffixStr ? `?${this.data.suffixStr}` : ''}` });
     },
 
     /**
