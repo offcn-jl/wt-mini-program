@@ -21,6 +21,7 @@
     "pages/login-demo/index",
 
     "pages/sobot/manual",
+    "pages/sobot/auto",
     "pages/web-view/index",
     "handler"
   ],
