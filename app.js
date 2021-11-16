@@ -162,6 +162,44 @@ App({
       return { suffix, suffixStr };
     },
 
+    // getContactInformation 获取推广信息
+    async getContactInformation(suffixInfo) {
+      const requestData = {};
+      if (suffixInfo.suffix.owner) {
+        requestData.owner = suffixInfo.suffix.owner;
+      } else if (suffixInfo.suffix.scode) {
+        requestData.scode = suffixInfo.suffix.scode;
+      }
+
+      // 发起网络请求
+      function sendRequset() {
+        return new Promise(resolve => {
+          wx.showLoading({ title: '请稍候...', mask: true })
+          wx.request({
+            url: getApp().globalData.config.apis.base.replace('wechat/mini-program', 'suffix/contact-information'),
+            data: requestData,
+            success: res => {
+              wx.hideLoading(); // 隐藏 loading
+              if (res.statusCode !== 200 || !res.data.success) {
+                getApp().methods.handleError({ err: res, title: "出错啦", content: res.data.errorMessage ? res.data.errorMessage : `发送请求失败，状态码：${res.statusCode}` });
+                resolve(false)
+              } else {
+                // 调用回调函数, 返回响应内容
+                resolve(res.data.data)
+              }
+            },
+            fail: err => {
+              wx.hideLoading() // 隐藏 loading
+              getApp().methods.handleError({ err: err, title: "出错啦", content: '发送请求失败' })
+              resolve(false)
+            }
+          })
+        })
+      }
+
+      return await sendRequset();
+    },
+
     // push2crm 推送数据到 crm
     push2crm({ phone, crmEventFormSID, suffix, remark }) {
       if (phone && crmEventFormSID) {
