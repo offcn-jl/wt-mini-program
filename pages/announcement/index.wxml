@@ -5,15 +5,7 @@
 
 <view class="bottom">
     <view class="shareWap">
-        <image src="{{contactInformation.Avatar}}" class="coverImg" mode="widthFix"></image>
-        <view class="coverName">
-            <view class="nameText">
-                {{contactInformation.Name}}
-            </view>
-            <view class="namePosition">
-                欢迎垂询
-            </view>
-        </view>
+        <image src="https://news01.offcn.com/jl/2021/1115/20211115032302356.png" class="coverImg" mode="widthFix"></image>
         <view class="iconCon coverOnlineConsulting" bindtap="gotoOnlineConsulting">
             <image src="https://news01.offcn.com/jl/2021/1116/20211116050741819.png" class="coverIcon"></image>
             <view class="coverText">在线咨询</view>
