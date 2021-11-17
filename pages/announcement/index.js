@@ -224,7 +224,7 @@ Page({
     // makePhoneCall 打电话
     makePhoneCall: function () {
         wx.makePhoneCall({
-            phoneNumber: String(this.data.contactInformation.ConsultationPhone)
+            phoneNumber: this.data.contactInformation.ConsultationPhone
         })
     },
 
