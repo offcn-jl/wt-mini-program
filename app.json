@@ -3,6 +3,7 @@
     "pages/index/index",
     
     "pages/announcement/index",
+    "pages/announcement/simple",
     
     "pages/simple-help-event/index",
     
