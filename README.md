@@ -54,6 +54,7 @@ https://ah.zgjfks.com
 https://bj-10353.ntalker.com
 https://bj-kf10353.ntalker.com
 https://bj.zgjfks.com
+https://cq.offcn.com
 https://cq.zgjfks.com
 https://files.offcn.com
 https://fj.offcn.com
