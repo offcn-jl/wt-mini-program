@@ -143,6 +143,7 @@ https://mln.zgjfks.com
 https://mnm.zgjfks.com
 https://mqh.zgjfks.com
 https://msa.zgjfks.com
+https://msc.yixue99.com
 https://msc.zgjfks.com
 https://msd.zgjfks.com
 https://msh.zgjfks.com
@@ -160,6 +161,7 @@ https://sa.offcn.com
 https://sa.rebeta.cn
 https://sa.zgjfks.com
 https://sc.offcn.com
+https://sc.yixue99.com
 https://sc.zgjfks.com
 https://sd.offcn.com
 https://sd.zgjfks.com
