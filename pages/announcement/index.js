@@ -149,9 +149,6 @@ Page({
                             padding: 0, // 设置padding 为二维码方格的个数 ( 边框 )
                             size: 230
                         })
-                        _this.setData({
-                            srcBase64: imgData
-                        })
                         // 将 BASE64编码的 图片保存到临时文件 用于绘制到 Canvas
                         const fs = wx.getFileSystemManager();
                         const filePath = `${wx.env.USER_DATA_PATH}/announcement-pic-${Date.now()}.gif`;
