@@ -7,6 +7,20 @@
     z-index: 99;
 }
 
+.advertising::after {
+    content: "- 广告 -";
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-shadow:
+        -.025em -.025em 0 #444,
+        .025em -.025em 0 #444,
+        -.025em .025em 0 #444,
+        .025em .025em 0 #444;
+    color: #fff;
+}
+
 /* 底部操作区域 */
 .bottom {
     position: fixed;

@@ -1,4 +1,4 @@
-<!--pages/announcement-simple/simple.wxml-->
+<!--pages/announcement/simple.wxml-->
 <header title="中公教育" suffixStr="{{suffixStr}}" nav alwaysShow></header>
 
 <view class="name">{{config.name}}</view>
