@@ -85,6 +85,7 @@ https://jl.offcn.com
 https://jl.zgjfks.com
 https://jl.zgsydw.com
 https://js.offcn.com
+https://js.yixue99.com
 https://js.zgjfks.com
 https://jx.offcn.com
 https://jx.zgjfks.com
@@ -111,6 +112,7 @@ https://m.sc.offcn.com
 https://m.sh.offcn.com
 https://m.sx.offcn.com
 https://m.tj.offcn.com
+https://m.yixue99.com
 https://m.zgjfks.com
 https://m.zgxds.cn
 https://m.zj.offcn.com
@@ -133,6 +135,7 @@ https://mhu.yixue99.com
 https://mhu.zgjfks.com
 https://mjl.yixue99.com
 https://mjl.zgjfks.com
+https://mjs.yixue99.com
 https://mjs.zgjfks.com
 https://mjx.zgjfks.com
 https://mln.jinrongren.net
