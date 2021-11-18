@@ -263,6 +263,18 @@ Page({
         });
     },
 
+    // makePhoneCall 打电话
+    makePhoneCall: function () {
+        wx.makePhoneCall({
+            phoneNumber: this.data.contactInformation.ConsultationPhone
+        })
+    },
+
+    // gotoOnlineConsulting 打开在线咨询
+    gotoOnlineConsulting: function () {
+        wx.navigateTo({ url: `/pages/sobot/auto${this.data.suffixStr ? `?${this.data.suffixStr}` : ''}` });
+    },
+    
     /**
      * 用户点击右上角分享
      */
