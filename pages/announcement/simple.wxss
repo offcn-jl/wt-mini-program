@@ -45,7 +45,6 @@
 
 /* 底部广告区域 */
 .advertising {
-    width: 100vw;
     position: relative;
 }
 
