@@ -8,7 +8,7 @@
 }
 
 .advertising::after {
-    content: "- 广告 -";
+    content: "广告";
     z-index: 100;
     position: absolute;
     top: 0;
@@ -19,6 +19,9 @@
         -.025em .025em 0 #444,
         .025em .025em 0 #444;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 8rpx 0 10rpx;
+    border-radius: 0 0 0 10rpx;
 }
 
 /* 底部操作区域 */
