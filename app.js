@@ -176,7 +176,7 @@ App({
         return new Promise(resolve => {
           wx.showLoading({ title: '请稍候...', mask: true })
           wx.request({
-            url: getApp().globalData.config.apis.base.replace('wechat/mini-program', 'suffix/contact-information'),
+            url: getApp().globalData.config.apis.base.replace('wechat/mini-program', 'tools-and-service/contact-information'),
             data: requestData,
             success: res => {
               wx.hideLoading(); // 隐藏 loading
