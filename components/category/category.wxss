@@ -1,0 +1,55 @@
+.category {
+    width: 170rpx;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+    font-size: 22rpx;
+    color: #000000;
+    height: 70rpx;
+    display: inline-block;
+    line-height:  70rpx;
+}
+
+.category .star-wrapper {
+    height: 110rpx;
+    width: 110rpx;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.category .star-wrapper .star {
+    height: 3520rpx;
+    width: 110rpx;
+    animation: ani steps(31) 1.4s;
+    animation-iteration-count: infinite;
+    display: none;
+}
+
+.category .icon-wrapper {
+    height: 110rpx;
+    width: 110rpx;
+    overflow: hidden;
+    display: none;
+}
+
+.category .icon-wrapper .icon {
+    height: 2640rpx;
+    width: 110rpx;
+    display: none;
+}
+
+.category.active {
+    font-size: 22rpx;
+    color: #ff8c1d;
+    font-weight: bold;
+    background: #ffffff;
+}
+
+.category.active .icon-wrapper .icon {
+    animation: ani steps(23) 1s;
+    animation-fill-mode: forwards;
+}
