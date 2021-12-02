@@ -50,6 +50,7 @@ https://19.offcn.com
 https://81jdwz.offcn.com
 https://ah.jinrongren.net
 https://ah.offcn.com
+https://ah.yixue99.com
 https://ah.zgjfks.com
 https://bj-10353.ntalker.com
 https://bj-kf10353.ntalker.com
@@ -62,9 +63,11 @@ https://fj.zgjfks.com
 https://gd.offcn.com
 https://gd.zgjfks.com
 https://gs.offcn.com
+https://gs.yixue99.com
 https://gs.zgjfks.com
 https://gx.yixue99.com
 https://gx.zgjfks.com
+https://gz.yixue99.com
 https://gz.zgjfks.com
 https://gzhd.offcn.com
 https://hb.offcn.com
@@ -89,6 +92,7 @@ https://js.offcn.com
 https://js.yixue99.com
 https://js.zgjfks.com
 https://jx.offcn.com
+https://jx.yixue99.com
 https://jx.zgjfks.com
 https://ln.jinrongren.net
 https://ln.offcn.com
@@ -153,10 +157,13 @@ https://mtj.zgjfks.com
 https://myn.zgjfks.com
 https://mzj.zgjfks.com
 https://nm.offcn.com
+https://nm.yixue99.com
 https://nm.zgjfks.com
 https://nx.offcn.com
+https://nx.yixue99.com
 https://offcn.sobot.com
 https://qh.offcn.com
+https://qh.yixue99.com
 https://qh.zgjfks.com
 https://sa.offcn.com
 https://sa.rebeta.cn
