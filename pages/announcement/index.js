@@ -78,6 +78,30 @@ Page({
                 // 跳转小程序（ 其他小程序 ）
                 wx.navigateToMiniProgram({ appId: this.data.config.advertisementConfig.appid, path: `${this.data.config.advertisementConfig.path}${this.data.suffixStr ? this.data.config.advertisementConfig.path.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
                 break;
+            case 'channel-activity':
+                // 视频号 - 打开视频
+                wx.openChannelsActivity({ finderUserName: this.data.config.advertisementConfig.finderUserName, feedId: this.data.config.advertisementConfig.feedId });
+                break;
+            case 'channel-reserve-live':
+                // 视频号 - 预约直播
+                wx.getChannelsLiveNoticeInfo({
+                    finderUserName: this.data.config.advertisementConfig.finderUserName,
+                    success: res => {
+                        if (res.errMsg === 'getChannelsLiveNoticeInfo:ok') {
+                            wx.reserveChannelsLive({noticeId: res.noticeId});
+                        } else {
+                            getApp().methods.handleError({ err: res, title: "出错啦", content: `暂无直播预告 [${res.errMsg}]` });
+                        }
+                    },
+                    fail: err => {
+                        getApp().methods.handleError({ err, title: "出错啦", content: `暂无直播预告 [${err.errMsg}]` });
+                    }
+                });
+                break;
+            case 'channel-live':
+                // 视频号 - 跳转直播间
+                wx.openChannelsLive({ finderUserName: this.data.config.advertisementConfig.finderUserName });
+                break;
             default:
                 wx.showToast({ title: '活动配置有误', icon: 'error' });
         }
