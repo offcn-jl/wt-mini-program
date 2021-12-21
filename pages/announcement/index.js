@@ -46,7 +46,7 @@ Page({
                     if (wx.getLaunchOptionsSync().scene !== 1154) {
                         // 不是单页模式，进行登陆操作
                         // 获取登陆状态
-                        getApp().methods.loginCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};简易助力活动;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
+                        getApp().methods.loginCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};加推;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
                     }
                 }
             },

@@ -101,7 +101,7 @@ Page({
     // 调用公共函数进行登陆操作后，将公共函数返回的登陆信息保存到当前页面的上下文中
     getPhoneNumber: function (event) {
         getApp().methods.login({
-            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};中公证件照;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};简易助力活动;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
                 if (event.currentTarget.dataset.bindtap === 'join') {
                     // join
