@@ -94,6 +94,7 @@ https://js.zgjfks.com
 https://jx.offcn.com
 https://jx.yixue99.com
 https://jx.zgjfks.com
+https://kk-file-view.t.eoffcn.com
 https://ln.jinrongren.net
 https://ln.offcn.com
 https://ln.zgjfks.com
