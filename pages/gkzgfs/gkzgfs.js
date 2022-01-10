@@ -6,7 +6,7 @@ Page({
     phone: '', // 用户手机号码
     crmEventFormSID: '702ef7a97ab0cf8b963a799fa91af2ea', // crm 活动表单 id
     showModalcg:false,
-    contents:'https://dl.offcn.com/aa/offcn/参考样式.zip'
+    contents:'https://www.sifalu.com/uploadfile/2022/0110/20220110041005676.zip'
   },
 
   async onLoad(options) {
