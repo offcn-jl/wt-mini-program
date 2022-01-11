@@ -85,7 +85,7 @@
 
 .zg_tittle2 {
     position: relative;
-    padding-left: 10rpx;
+    padding-left: 20rpx;
     font-size: 40rpx;
     color: #efb718;
     font-weight: bold;
@@ -96,7 +96,7 @@
 .zg_tittle2:before {
     content: " ";
     position: absolute;
-    left: -16px;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 4px;
