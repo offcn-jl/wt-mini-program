@@ -1,14 +1,128 @@
 /* pages/announcement/simple.wxss */
-.name {
-    font-size: 45rpx;
-    padding: 10rpx 20rpx;
+.zg_box {
+    width: 100%;
+    height: 1334rpx;
+    background: url(https://www.offcn.com/zg/wltg/zbjtxcx/zg_bg2.jpg) no-repeat;
+    background-size: 100% 1334rpx;
+    display: none;
+}
+
+.zg_box2 {
+    background: #f5f5f5;
+}
+.zg_box3{
+    background: url(https://www.offcn.com/zg/wltg/zbjtxcx/zg_bg3.jpg) no-repeat;
+    background-size: 100% 1334rpx;
+    display: block;
+}
+.zg_box_img1 {
+    width: 750rpx;
+    height: 83rpx;
+    margin-bottom: 50rpx;
+}
+
+.zg_box_cont {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 10rpx;
+    width: 700rpx;
+    height: calc(100vh - 200rpx);
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 15%);
+    box-sizing: border-box;
+}
+
+.zg_box_cont2 {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 10rpx;
+    width: 700rpx;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+.zg_box_cont3{
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 10rpx;
+    width: 700rpx;
+    height: calc(100vh - 300rpx);
+    box-sizing: border-box;
+}
+.zg_box_text {
+    padding: 50rpx 30rpx;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.zg_box_text3{
+    padding-top: 190rpx;
+    overflow: hidden;
+}
+.zg_box_img2 {
+    position: absolute;
+    right: 100rpx;
+    top: -36rpx;
+    width: 56rpx;
+    height: 63rpx;
+}
+
+.zg_box_img3 {
+    position: absolute;
+    left: 100rpx;
+    top: -36rpx;
+    width: 56rpx;
+    height: 63rpx;
+}
+
+.zg_tittle {
+    font-size: 40rpx;
+    color: #efb718;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10rpx;
+    letter-spacing: 2rpx;
+}
+
+.zg_tittle2 {
+    position: relative;
+    padding-left: 10rpx;
+    font-size: 40rpx;
+    color: #efb718;
+    font-weight: bold;
+    text-align: justify;
+    margin-bottom: 10rpx;
+}
+
+.zg_tittle2:before {
+    content: " ";
+    position: absolute;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 100%;
+    border-radius: 2px;
+    background: #e3ae08;
+}
+
+.zg_box2_img1 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 750rpx;
+    height: 484rpx;
+}
+
+.zg_curr {
+    display: block;
 }
 
 .abstract {
-    font-size: 36rpx;
-    padding: 10rpx 20rpx;
-    text-indent: 2rem;
-    word-wrap: break-word;
+    font-size: 26rpx;
+    color: #333333;
+    line-height: 50rpx;
+    text-align: justify;
+    letter-spacing: 2rpx;
 }
 
 .bottom-view {
@@ -20,23 +134,43 @@
     padding-top: 25rpx;
     box-shadow: 0px 0px 12rpx rgba(0, 0, 0, 0.5);
 }
-
+.bottom-view1{
+    background:none;
+    box-shadow:none;
+}
 .bottom-view .view-btn {
     margin-left: 5vw !important;
     margin: 30rpx auto;
     width: 90vw;
     /* background: linear-gradient(to right, #ff5b5d, #ff552d); */
-    animation:bg-color 10s infinite;
+    animation: bg-color 10s infinite;
     color: #fff;
 }
 
 @keyframes bg-color {
-    0% {background-color:#e74c3c; }
-    20%{background-color:#f1c40f;}
-    40%{background-color:#1abc9c;}
-    60%{background-color:#3498db;}
-    80%{background-color:#9b59b6;}
-    100%{background-color:#e74c3c;}
+    0% {
+        background-color: #e74c3c;
+    }
+
+    20% {
+        background-color: #f1c40f;
+    }
+
+    40% {
+        background-color: #1abc9c;
+    }
+
+    60% {
+        background-color: #3498db;
+    }
+
+    80% {
+        background-color: #9b59b6;
+    }
+
+    100% {
+        background-color: #e74c3c;
+    }
 }
 
 .suffix {
@@ -142,17 +276,34 @@
     border-radius: 10rpx;
     overflow: hidden;
     /* box-shadow: 0px 0px 12rpx rgba(0, 0, 0, 0.1); */
-    animation:box-shadow-color 10s infinite;
+    animation: box-shadow-color 10s infinite;
     margin-bottom: 30rpx;
 }
 
 @keyframes box-shadow-color {
-    0% {box-shadow: 0px 0px 12rpx #e74c3c; }
-    20%{box-shadow: 0px 0px 12rpx #f1c40f;}
-    40%{box-shadow: 0px 0px 12rpx #1abc9c;}
-    60%{box-shadow: 0px 0px 12rpx #3498db;}
-    80%{box-shadow: 0px 0px 12rpx #9b59b6;}
-    100%{box-shadow: 0px 0px 12rpx #e74c3c;}
+    0% {
+        box-shadow: 0px 0px 12rpx #e74c3c;
+    }
+
+    20% {
+        box-shadow: 0px 0px 12rpx #f1c40f;
+    }
+
+    40% {
+        box-shadow: 0px 0px 12rpx #1abc9c;
+    }
+
+    60% {
+        box-shadow: 0px 0px 12rpx #3498db;
+    }
+
+    80% {
+        box-shadow: 0px 0px 12rpx #9b59b6;
+    }
+
+    100% {
+        box-shadow: 0px 0px 12rpx #e74c3c;
+    }
 }
 
 .coverImg {
