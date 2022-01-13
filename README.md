@@ -168,7 +168,6 @@ https://qh.offcn.com
 https://qh.yixue99.com
 https://qh.zgjfks.com
 https://sa.offcn.com
-https://sa.rebeta.cn
 https://sa.zgjfks.com
 https://sc.offcn.com
 https://sc.yixue99.com
