@@ -25,6 +25,7 @@
     
     "pages/login-demo/index",
 
+    "pages/wb/index",
     "pages/sobot/manual",
     "pages/sobot/auto",
     "pages/web-view/index",

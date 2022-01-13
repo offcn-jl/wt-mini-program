@@ -188,6 +188,7 @@ https://www.yixue99.com
 https://www.zggcks.com
 https://www.zgjfks.com
 https://www.zgxds.cn
+https://ybgiifcyhb.miniapp.weibanzhushou.com
 https://yn.offcn.com
 https://yn.yixue99.com
 https://yn.zgjfks.com
