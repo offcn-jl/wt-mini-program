@@ -86,6 +86,7 @@ https://hu.yixue99.com
 https://hu.zgjfks.com
 https://i.offcn.com
 https://jl.offcn.com
+https://jl.yixue99.com
 https://jl.zgjfks.com
 https://jl.zgsydw.com
 https://js.offcn.com
