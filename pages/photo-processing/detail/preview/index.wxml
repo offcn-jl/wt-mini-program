@@ -32,7 +32,7 @@
       美白
     </view>
     </view>
-    <button bindtap="save" class="btn btn-blue" style="margin-right: 0;">保存</button>
+    <button bindtap="save" class="btn btn-blue" style="position: absolute; right: 5vw;">保存</button>
 </view>
 <view class="edit-wrapper whitening" wx:if="{{edit=='whitening'}}">
     <view class="top">
