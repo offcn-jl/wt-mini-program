@@ -23,8 +23,10 @@
     "pages/photo-processing/album/index",
     "pages/photo-processing/album/detail/index",
     
+    "pages/login-demo-sso/index",
     "pages/login-demo/index",
 
+    "pages/user/register/index",
     "pages/agreement/privacy/index",
     "pages/wb/index",
     "pages/sobot/manual",

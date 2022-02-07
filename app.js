@@ -1,9 +1,27 @@
 // app.js
 App({
-  onLaunch() { },
+  onLaunch() {
+    // 获取用户信息
+    if (wx.getStorageSync('sso-token')) {
+      this.methods.requsetWithCode({
+        path: "/user/sso/info",
+        data: { token: wx.getStorageSync('sso-token') },
+        callback: res => {
+          this.globalData.user = res.data.data.user;
+          this.globalData.userLoaded = true;
+        },
+      });
+    } else {
+      this.globalData.userLoaded = true;
+    }
+  },
 
   // 全局数据
   globalData: {
+    // 用户信息
+    user: {},
+    userLoaded: false,
+    // 配置信息
     config: {
       ...require("./config")
     }
@@ -270,6 +288,54 @@ App({
           }
         }
       });
+    },
+
+    /**
+       * loginCheck 公共函数 SSO 检查登陆状态
+       * @param {*} crmEventFormSID CRM 活动表单 SID
+       * @param {*} suffix 后缀信息
+       * @param {*} remark 备注
+       * @param {*} callback 回调函数
+       */
+    SSOCheck({ crmEventFormSID, suffix, remark, callback }) {
+      const timer = setInterval(() => {
+        if (getApp().globalData.userLoaded) {
+          clearInterval(timer);
+          if (getApp().globalData.user.username) {
+            getApp().methods.push2crm({ phone: getApp().globalData.user.username, crmEventFormSID, suffix, remark });
+            callback && callback({ phone: getApp().globalData.user.username, openid: getApp().globalData.user.openId });
+          }
+        }
+      }, 50);
+    },
+
+    /**
+       * loginCheck 公共函数 SSO 检查登陆状态 手动触发
+       * @param {*} crmEventFormSID CRM 活动表单 SID
+       * @param {*} suffix 后缀信息
+       * @param {*} remark 备注
+       * @param {*} callback 回调函数
+       */
+    SSOCheckManual({ crmEventFormSID, suffix, remark, callback }) {
+      if (!getApp().globalData.user.username) {
+        wx.navigateTo({
+          url: `/pages/user/register/index${suffix && suffix.suffixStr ? `?&{suffix.suffixStr}` : ''}`,
+          events: {
+            // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+            finishEvent: function (data) {
+              wx.navigateBack({
+                complete: () =>{
+                  getApp().methods.push2crm({ phone: getApp().globalData.user.username, crmEventFormSID, suffix, remark });
+                  callback && callback({ phone: getApp().globalData.user.username, openid: getApp().globalData.user.openId });
+                }
+              });
+            }
+          },
+        });
+      } else {
+        getApp().methods.push2crm({ phone: getApp().globalData.user.username, crmEventFormSID, suffix, remark });
+        callback && callback({ phone: getApp().globalData.user.username, openid: getApp().globalData.user.openId });
+      }
     },
   },
 })

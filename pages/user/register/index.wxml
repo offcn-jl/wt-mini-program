@@ -1,0 +1,85 @@
+<view class="background-circle-blue" />
+<view class="background-circle-yellow" />
+<view class="background-circle-green" />
+
+<block wx:if="{{page===1}}">
+    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+    <view class="logo-text">请完成注册以使用完整服务</view>
+
+    <button type="primary" wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">微信授权，快速注册</button>
+    <button type="primary" wx:else open-type="getPhoneNumber" bindgetphonenumber="registerByWechatAuth">微信授权，快速注册</button>
+    <button plain wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">短信验证码注册</button>
+    <button plain wx:else bindtap="goSMSRegister">短信验证码注册</button>
+
+    <view class="agreement-privacy">
+        <label class="lable" bindtap="tapAgreementPrivacy">
+            <checkbox checked="{{agreeAgreementPrivacy}}"/>已经阅读并同意
+        </label>
+        <b class="read" bindtap="readPrivacy">《用户信息保护及隐私政策》</b>
+    </view>
+
+    <view style="color: gray;text-align: center;">- - - 或  - - -</view>
+
+    <button bindtap="associatedAccount">关联中公APP账号</button>
+    <button bindtap="associatedAccount">关联中公网校账号</button>
+
+    <button type="warn" bindtap="back">返回</button>
+</block>
+
+<view class="agreement-privacy-view" wx:if="{{page===2}}">
+    <scroll-view class="agreement-privacy-text" scroll-y>
+        <rich-text nodes="{{agreementPrivacyHtmlSnip}}"></rich-text>
+    </scroll-view>
+    <button type="primary" bindtap="setAgreeAgreementPrivacy">同意</button>
+    <button type="warn" plain bindtap="setDisagreeAgreementPrivacy">拒绝</button>
+</view>
+
+<view class="agreement-privacy-view" wx:if="{{page===3}}">
+    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+    <view class="title">短信验证码注册</view>
+
+    <input type="number" placeholder="手机号码" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
+    <input type="number" placeholder="验证码" class="verify-code" maxlength="6" focus="{{verifyCodeFocus}}" bindinput="inputVerifyCode"/>
+    <button class="get-verify-code" bindtap="getVerifyCode">{{getVerifyCodeButtonText}}</button>
+
+    <button type="primary" bindtap="byVerifyCode" data-type="注册">注册</button>
+
+    <button type="warn" bindtap="backPage1">返回</button>
+</view>
+
+<view class="agreement-privacy-view" wx:if="{{page===4}}">
+    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+    <view class="title">短信验证码登录</view>
+
+    <input type="number" placeholder="账号 ( 手机号码 )" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
+    <input type="number" placeholder="验证码" class="verify-code" maxlength="6" focus="{{verifyCodeFocus}}" bindinput="inputVerifyCode"/>
+    <button class="get-verify-code" bindtap="getVerifyCode">{{getVerifyCodeButtonText}}</button>
+
+    <button type="primary" bindtap="byVerifyCode" data-type="登录">登录</button>
+
+    <button type="warn" bindtap="backPage1">返回</button>
+</view>
+
+<view class="agreement-privacy-view" wx:if="{{page===5}}">
+    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+    <view class="title">账号密码登录</view>
+
+    <input type="number" placeholder="账号 ( 手机号码 )" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
+    <input type="text" password="true" placeholder="密码" bindinput="inputPassword" class="password"/>
+
+    <button type="primary" bindtap="byPassword">登录</button>
+
+    <button type="warn" bindtap="backPage1">返回</button>
+</view>
+
+<block wx:if="{{page===6}}">
+    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+    <view class="logo-text">设置头像和昵称（可选）</view>
+
+    <button type="primary" style="margin-top: 10vh;" bindtap="setUserInfo">微信授权，快速设置</button>
+
+    <button bindtap="skipSetUserInfo">跳过</button>
+</block>
+
+<!-- 推广后缀 -->
+<view class="suffix">{{suffixStr}}</view>

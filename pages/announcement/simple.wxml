@@ -39,7 +39,7 @@
         <!-- 查看原文 -->
         <!-- 区分登陆状态和未登录状态 -->
         <button wx:if="{{phone}}" class="view-btn" bindtap="view">点 击 查 看 全 文</button>
-        <button wx:if="{{!phone}}" class="view-btn" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">点 击 查 看 全 文</button>
+        <button wx:if="{{!phone}}" class="view-btn" bindtap="SSOCheckManual">点 击 查 看 全 文</button>
 
         <!-- 广告 收集手机号 -->
         <!-- <button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" open-type="getPhoneNumber" bindgetphonenumber="goAdvertisingAfterLogin">
@@ -99,7 +99,7 @@
         <!-- 查看原文 -->
         <!-- 区分登陆状态和未登录状态 -->
         <button wx:if="{{phone}}" class="view-btn" bindtap="view">点 击 查 看 全 文</button>
-        <button wx:if="{{!phone}}" class="view-btn" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">点 击 查 看 全 文</button>
+        <button wx:if="{{!phone}}" class="view-btn" bindtap="SSOCheckManual">点 击 查 看 全 文</button>
 
         <!-- 广告 收集手机号 -->
         <!-- <button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" open-type="getPhoneNumber" bindgetphonenumber="goAdvertisingAfterLogin">
@@ -136,7 +136,7 @@
 
         <!-- 区分登陆状态和未登录状态 -->
         <button wx:if="{{phone}}" class="view-btn" bindtap="view">点 击 查 看 全 文</button>
-        <button wx:if="{{!phone}}" class="view-btn" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">点 击 查 看 全 文</button>
+        <button wx:if="{{!phone}}" class="view-btn" bindtap="SSOCheckManual">点 击 查 看 全 文</button>
 
         <!-- 广告 收集手机号 -->
         <!-- <button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" open-type="getPhoneNumber" bindgetphonenumber="goAdvertisingAfterLogin">
