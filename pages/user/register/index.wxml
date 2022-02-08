@@ -78,13 +78,13 @@
     <button bindtap="backPage1">返回</button>
 </view>
 
-<block wx:if="{{page===6}}">
-    <view class="logo-text">设置头像和昵称（可选）</view>
+<view class="agreement-privacy-view" wx:if="{{page===6}}">
+    <view class="title">设置头像和昵称（可选）</view>
 
     <button type="primary" style="margin-top: 10vh;" bindtap="setUserInfo">微信授权，快速设置</button>
 
     <button bindtap="skipSetUserInfo">跳过</button>
-</block>
+</view>
 
 <!-- 推广后缀 -->
 <view class="suffix">{{suffixStr}}</view>
