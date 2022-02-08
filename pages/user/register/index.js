@@ -259,7 +259,7 @@ Page({
             wx.navigateBack();
         } else {
             wx.redirectTo({
-                url: `/pages/index/index${this.data.suffixStr}`
+                url: `/pages/index/index${this.data.suffixStr?`?${this.data.suffixStr}`:''}`
             });
         }
     },
