@@ -2,14 +2,13 @@
 <view class="background-circle-yellow" />
 <view class="background-circle-green" />
 
+<image class="logo" src="https://appopenoss.offcn.com/statics/image/logo-horizontal-red-black.png" mode="widthFix"></image>
+
 <view class="agreement-privacy-view" wx:if="{{page===1}}">
-    <image class="logo-index" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
-    <view class="logo-text">请完成注册以使用完整服务</view>
+    <view class="index-tips">请完成注册以使用完整服务</view>
 
     <button type="primary" wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">微信授权，快速注册</button>
     <button type="primary" wx:else open-type="getPhoneNumber" bindgetphonenumber="registerByWechatAuth">微信授权，快速注册</button>
-    <button wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">短信验证码注册</button>
-    <button wx:else bindtap="goSMSRegister">短信验证码注册</button>
 
     <view class="agreement-privacy">
         <label class="lable" bindtap="tapAgreementPrivacy">
@@ -18,19 +17,20 @@
         <b class="read" bindtap="readPrivacy">《用户信息保护及隐私政策》</b>
     </view>
 
-    <button bindtap="back" style="font-size: 25rpx;">暂不注册</button>
+    <view class="other-options">
+        <view class="left" wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">短信验证码注册</view>
+        <view class="left" wx:else bindtap="goSMSRegister">短信验证码注册</view>
+        <view class="right" bindtap="back">暂不注册</view>
+    </view>
 
-    <view style="margin-top: 5vh;color: gray;text-align: center;font-size: 26rpx;">- - - 或 直接关联其他平台账号  - - -</view>
+    <view style="margin-top: 15vh;color: gray;text-align: center;font-size: 26rpx;">其他登录方式</view>
 
     <view class="link">
         <view class="item" bindtap="associatedAccount">
             <image src="https://appopenoss.offcn.com/statics/image/offcn-app.png" mode="widthFix" class="icon"></image>
-            <view class="text">中公教育 APP</view>
         </view>
         <view class="item" bindtap="associatedAccount">
             <image src="https://appopenoss.offcn.com/statics/image/eoffcn-app.png" mode="widthFix" class="icon"></image>
-            <view class="text">中公网校</view>
-            <view class="text">(中公网校在线课堂 APP)</view>
         </view>
     </view>
 </view>
@@ -44,7 +44,6 @@
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===3}}">
-    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
     <view class="title">短信验证码注册</view>
 
     <input type="number" placeholder="手机号码" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
@@ -57,7 +56,6 @@
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===4}}">
-    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
     <view class="title">短信验证码登录</view>
 
     <input type="number" placeholder="账号 ( 手机号码 )" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
@@ -70,7 +68,6 @@
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===5}}">
-    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
     <view class="title">账号密码登录</view>
 
     <input type="number" placeholder="账号 ( 手机号码 )" class="phone" auto-focus focus="{{phoneFocus}}" bindinput="inputPhone"/>
@@ -82,7 +79,6 @@
 </view>
 
 <block wx:if="{{page===6}}">
-    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
     <view class="logo-text">设置头像和昵称（可选）</view>
 
     <button type="primary" style="margin-top: 10vh;" bindtap="setUserInfo">微信授权，快速设置</button>

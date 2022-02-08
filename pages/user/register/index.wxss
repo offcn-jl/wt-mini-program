@@ -59,16 +59,18 @@
     }
 }
 
-.logo-index {
+.logo {
     width: 40vw;
-    height: 40vw;
     display: block;
-    margin-left: 5vw;
+    position: fixed;
+    top: 6vh;
+    left: 2vh;
 }
 
-.logo-text {
-    margin-top: -3vh;
-    margin-left: 7vw;
+.index-tips {
+    margin-top: 20vh;
+    text-align: center;
+    font-weight: bold;
 }
 
 button[type=primary] {
@@ -80,8 +82,24 @@ button {
     width: 80vw !important;
 }
 
+.other-options {
+    width: 80vw;
+    display: block;
+    margin: 3vh auto;
+    font-size: 26rpx;
+    color: gray;
+}
+
+.other-options .left {
+    float: left;
+}
+
+.other-options .right {
+    float: right;
+}
+
 .agreement-privacy {
-    margin: 2vh auto 4vh;
+    margin: 2vh auto;
     width: 80vw;
     font-size: 26rpx;
 }
@@ -110,7 +128,7 @@ button {
 }
 
 .agreement-privacy-view .title {
-    margin: 0 auto 5vh;
+    margin: 5vh auto;
     font-size: 60rpx;
     text-align: center;
 }
@@ -138,11 +156,6 @@ button {
     padding: 20rpx 18rpx;
 }
 
-.agreement-privacy-view .logo {
-    display: block;
-    margin: -5vh auto;
-}
-
 .agreement-privacy-view .password {
     margin-top: 3vh;
 }
@@ -160,18 +173,14 @@ button {
 
 .link .item .icon {
     display: block;
-    width: 60rpx;
+    width: 80rpx;
     border-radius: 25%;
     border: 1px solid rgb(199, 199, 199);
     margin: 0 auto;
 }
 
-.link .item .text {
-    font-size: 20rpx;
-    text-align: center;
-}
-
 .suffix {
     position: fixed;
     bottom: 0;
+    width: 100vw;
 }
