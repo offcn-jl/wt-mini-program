@@ -46,7 +46,7 @@ Page({
                     if (wx.getLaunchOptionsSync().scene !== 1154) {
                         // 不是单页模式，进行登陆操作
                         // 获取登陆状态
-                        getApp().methods.loginCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};加推;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
+                        getApp().methods.SSOCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};加推;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
                     }
                 }
             },
@@ -108,9 +108,8 @@ Page({
     },
 
     // 登陆后跳转到广告
-    goAdvertisingAfterLogin: function (event) {
-        getApp().methods.login({
-            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+    SSOCheckManualAdvertising: function () {
+        getApp().methods.SSOCheckManual({crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
                 this.goAdvertising();
             }
@@ -122,10 +121,9 @@ Page({
         wx.navigateTo({ url: `/pages/web-view/index?src=${this.data.config.originalLink}${this.data.suffixStr ? this.data.config.advertisementConfig.link.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
     },
 
-    // 登陆后查看原文
-    goViewAfterLogin: function (event) {
-        getApp().methods.login({
-            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+    // 手动检查 SSO 登录状态
+    SSOCheckManual: function () {
+        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
                 this.view();
             }

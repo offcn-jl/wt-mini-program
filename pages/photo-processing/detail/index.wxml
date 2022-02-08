@@ -53,8 +53,8 @@
 </view>
 <view class="bottom">
     <block wx:if="{{!phone}}">
-        <button class="btn btn-green" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="album">从相册中选取</button>
-        <button class="btn btn-blue" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" data-bindtap="camera">拍摄</button>
+        <button class="btn btn-green" bindtap="SSOCheckManual" data-bindtap="album">从相册中选取</button>
+        <button class="btn btn-blue" bindtap="SSOCheckManual" data-bindtap="camera">拍摄</button>
     </block>
     <block wx:else>
         <button class="btn btn-green" bindtap="album">

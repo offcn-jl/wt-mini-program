@@ -30,11 +30,11 @@
     <!-- 查看原文 -->
     <!-- 区分登陆状态和未登录状态 -->
     <button wx:if="{{phone}}" class="view" bindtap="view">查看全文</button>
-    <button wx:if="{{!phone}}" class="view" open-type="getPhoneNumber" bindgetphonenumber="goViewAfterLogin">查看全文</button>
+    <button wx:if="{{!phone}}" class="view" bindtap="SSOCheckManual">查看全文</button>
 </view>
 
 <!-- 广告 收集手机号 -->
-<button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" open-type="getPhoneNumber" bindgetphonenumber="goAdvertisingAfterLogin">
+<button wx:if="{{config.advertisementConfig.enable && config.advertisementConfig.collectPhone && !phone}}" class="button-custom advertising w100" bindtap="SSOCheckManualAdvertising">
     <image class="w100" mode="widthFix" src="{{config.advertisementConfig.picture}}"></image>
 </button>
 <!-- 广告 不收集手机号 -->

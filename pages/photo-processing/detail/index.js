@@ -39,7 +39,8 @@ Page({
                     // 判断是否是单页模式
                     if (wx.getLaunchOptionsSync().scene !== 1154) {
                         // 不是单页模式，进行登陆操作
-                        getApp().methods.loginCheck({crmEventFormSID: res.data.data.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${res.data.data.crmEventFormSid};中公证件照;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid })}); // 获取登陆状态
+                        // 获取登陆状态
+                        getApp().methods.SSOCheck({crmEventFormSID: res.data.data.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${res.data.data.crmEventFormSid};中公证件照;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid })});
                     }
                 }
             },
@@ -50,10 +51,9 @@ Page({
         });
     },
 
-    // 登陆
-    // 调用公共函数进行登陆操作后，将公共函数返回的登陆信息保存到当前页面的上下文中
-    getPhoneNumber: function (event) {
-        getApp().methods.login({ event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${this.data.config.crmEventFormSid};中公证件照;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+    // 手动检查 SSO 登录状态
+    SSOCheckManual: function (event) {
+        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${this.data.config.crmEventFormSid};中公证件照;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
             this.setData({ phone, openid });
             if (event.currentTarget.dataset.bindtap === 'album') {
                 this.album();
@@ -63,7 +63,7 @@ Page({
         }});
     },
 
-    // 选择照片 fixme
+    // 选择照片
     album: function () {
         const _this = this;
         wx.chooseImage({
@@ -71,11 +71,11 @@ Page({
             sizeType: ["original"],
             sourceType: ["album"],
             success: function (res) {
+                wx.showLoading({ title: "图片分析中.." });
                 const tempFilePath = res.tempFilePaths[0];
                 // 获取签名
                 getApp().methods.getTencentCloudSign('iai.tencentcloudapi.com', JSON.stringify({ Image: wx.getFileSystemManager().readFileSync(tempFilePath, "base64") }), ({ authorizeToOpenid, timestamp, authorization }) => {
                     // 使用签名调用腾讯云接口进行人脸检测与分析
-                    wx.showLoading({ title: "图片分析中.." });
                     wx.request({
                         url: 'https://iai.tencentcloudapi.com',
                         method: 'POST',
