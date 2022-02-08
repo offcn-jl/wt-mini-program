@@ -41,6 +41,12 @@
                     "pathName": "pages/web-view/index",
                     "query": "src=https://www.offcn.com/zg/wltg/offcnwtbd/&owner=22472&channel=1&orgn=1",
                     "scene": null
+                },
+                {
+                    "name": "用户注册-带后缀",
+                    "pathName": "pages/user/register/index",
+                    "query": "scode=iKN7E4",
+                    "scene": null
                 }
             ]
         }
