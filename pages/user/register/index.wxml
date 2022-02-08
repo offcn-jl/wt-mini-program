@@ -2,14 +2,14 @@
 <view class="background-circle-yellow" />
 <view class="background-circle-green" />
 
-<block wx:if="{{page===1}}">
-    <image class="logo" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
+<view class="agreement-privacy-view" wx:if="{{page===1}}">
+    <image class="logo-index" src="https://appopenoss.offcn.com/statics/image/logo.svg"></image>
     <view class="logo-text">请完成注册以使用完整服务</view>
 
     <button type="primary" wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">微信授权，快速注册</button>
     <button type="primary" wx:else open-type="getPhoneNumber" bindgetphonenumber="registerByWechatAuth">微信授权，快速注册</button>
-    <button plain wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">短信验证码注册</button>
-    <button plain wx:else bindtap="goSMSRegister">短信验证码注册</button>
+    <button wx:if="{{!agreeAgreementPrivacy}}" bindtap="tipReadAgreementPrivacy">短信验证码注册</button>
+    <button wx:else bindtap="goSMSRegister">短信验证码注册</button>
 
     <view class="agreement-privacy">
         <label class="lable" bindtap="tapAgreementPrivacy">
@@ -18,20 +18,29 @@
         <b class="read" bindtap="readPrivacy">《用户信息保护及隐私政策》</b>
     </view>
 
-    <view style="color: gray;text-align: center;">- - - 或  - - -</view>
+    <button bindtap="back" style="font-size: 25rpx;">暂不注册</button>
 
-    <button bindtap="associatedAccount">关联中公APP账号</button>
-    <button bindtap="associatedAccount">关联中公网校账号</button>
+    <view style="margin-top: 5vh;color: gray;text-align: center;font-size: 26rpx;">- - - 或 直接关联其他平台账号  - - -</view>
 
-    <button type="warn" bindtap="back">返回</button>
-</block>
+    <view class="link">
+        <view class="item" bindtap="associatedAccount">
+            <image src="https://appopenoss.offcn.com/statics/image/offcn-app.png" mode="widthFix" class="icon"></image>
+            <view class="text">中公教育 APP</view>
+        </view>
+        <view class="item" bindtap="associatedAccount">
+            <image src="https://appopenoss.offcn.com/statics/image/eoffcn-app.png" mode="widthFix" class="icon"></image>
+            <view class="text">中公网校</view>
+            <view class="text">(中公网校在线课堂 APP)</view>
+        </view>
+    </view>
+</view>
 
 <view class="agreement-privacy-view" wx:if="{{page===2}}">
     <scroll-view class="agreement-privacy-text" scroll-y>
         <rich-text nodes="{{agreementPrivacyHtmlSnip}}"></rich-text>
     </scroll-view>
     <button type="primary" bindtap="setAgreeAgreementPrivacy">同意</button>
-    <button type="warn" plain bindtap="setDisagreeAgreementPrivacy">拒绝</button>
+    <button bindtap="setDisagreeAgreementPrivacy">拒绝</button>
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===3}}">
@@ -44,7 +53,7 @@
 
     <button type="primary" bindtap="byVerifyCode" data-type="注册">注册</button>
 
-    <button type="warn" bindtap="backPage1">返回</button>
+    <button bindtap="backPage1">返回</button>
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===4}}">
@@ -57,7 +66,7 @@
 
     <button type="primary" bindtap="byVerifyCode" data-type="登录">登录</button>
 
-    <button type="warn" bindtap="backPage1">返回</button>
+    <button bindtap="backPage1">返回</button>
 </view>
 
 <view class="agreement-privacy-view" wx:if="{{page===5}}">
@@ -69,7 +78,7 @@
 
     <button type="primary" bindtap="byPassword">登录</button>
 
-    <button type="warn" bindtap="backPage1">返回</button>
+    <button bindtap="backPage1">返回</button>
 </view>
 
 <block wx:if="{{page===6}}">
