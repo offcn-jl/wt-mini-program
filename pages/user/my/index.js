@@ -30,7 +30,11 @@ Page({
                 } else {
                     // 退出成功
                     wx.showToast({ title: '退出登录成功' });
+                    // 清空缓存的用户信息
                     this.setData({ user: null });
+                    getApp().globalData.user = {};
+                    // 删除 token
+                    wx.removeStorage({ key: 'sso-token' });
                 }
             },
             fail: err => {
