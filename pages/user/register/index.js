@@ -32,7 +32,7 @@ Page({
             getApp().globalData.user = res.data.data.user;
             wx.setStorage({ key: "sso-token", data: res.data.data.user.token });
             // 判断是否需要更新头像
-            if (this.data.page !== 6 && res.data.data.user.nickName === res.data.data.user.phone && res.data.data.user.headPortrait === "" ) {
+            if (this.data.page !== 6 && res.data.data.user.info.nickName === res.data.data.user.info.phone && res.data.data.user.info.headPortrait === "" ) {
                 this.setData({page: 6});
                 return
             }
