@@ -32,8 +32,8 @@ Page({
             getApp().globalData.user = res.data.data.user;
             wx.setStorage({ key: "sso-token", data: res.data.data.user.token });
             // 判断是否需要更新头像
-            if (this.data.page !== 6 && res.data.data.user.info.nickName === res.data.data.user.info.phone && res.data.data.user.info.headPortrait === "" ) {
-                this.setData({page: 6});
+            if (this.data.page !== 6 && res.data.data.user.info.nickName === res.data.data.user.info.phone && res.data.data.user.info.headPortrait === "") {
+                this.setData({ page: 6 });
                 return
             }
 
@@ -46,38 +46,38 @@ Page({
     skipSetUserInfo: function () {
         // 返回操作成功状态，关闭页面
         const eventChannel = this.getOpenerEventChannel();
-        eventChannel.emit('finishEvent', {data: 'success'});
+        eventChannel.emit('finishEvent', { data: 'success' });
     },
 
     // 设置头像和昵称
-    setUserInfo: function() {
+    setUserInfo: function () {
         wx.showLoading({ title: '请稍候...', mask: true })
         wx.getUserProfile({
-          desc: '用于进行头像 DIY',
-          success: (res) => {
-            // 转换头像链接, 修改为高分辨率链接
-            res.userInfo.avatarUrl = res.userInfo.avatarUrl.split('/')
-            res.userInfo.avatarUrl[res.userInfo.avatarUrl.length - 1] = 0
-            res.userInfo.avatarUrl = res.userInfo.avatarUrl.join('/')
-           
-            // 调用接口更新用户信息
-            getApp().methods.requsetWithCode({
-                path: "/user/sso/info/update",
-                method: 'POST',
-                data: { token: wx.getStorageSync('sso-token'), nickName: res.userInfo.nickName, headPortrait: res.userInfo.avatarUrl },
-                callback: res => this.handleResut(res, '设置成功'),
-            });
-          },
-          fail: err => {
-            wx.hideLoading()
-            if (err.errMsg === "getUserProfile:fail auth deny") {
-              // 未授权
-              getApp().methods.handleError({ err: err, title: '出错啦', content: "需要您同意授权后方可使用您的头像和昵称", reLaunch: false })
-            } else {
-              // 其他错误
-              getApp().methods.handleError({ err: err, title: '出错啦', content: `未知错误，请稍后再试 ${err.errMsg}`, reLaunch: false })
+            desc: '用于进行头像 DIY',
+            success: (res) => {
+                // 转换头像链接, 修改为高分辨率链接
+                res.userInfo.avatarUrl = res.userInfo.avatarUrl.split('/')
+                res.userInfo.avatarUrl[res.userInfo.avatarUrl.length - 1] = 0
+                res.userInfo.avatarUrl = res.userInfo.avatarUrl.join('/')
+
+                // 调用接口更新用户信息
+                getApp().methods.requsetWithCode({
+                    path: "/user/sso/info/update",
+                    method: 'POST',
+                    data: { token: wx.getStorageSync('sso-token'), nickName: res.userInfo.nickName, headPortrait: res.userInfo.avatarUrl },
+                    callback: res => this.handleResut(res, '设置成功'),
+                });
+            },
+            fail: err => {
+                wx.hideLoading()
+                if (err.errMsg === "getUserProfile:fail auth deny") {
+                    // 未授权
+                    getApp().methods.handleError({ err: err, title: '出错啦', content: "需要您同意授权后方可使用您的头像和昵称", reLaunch: false })
+                } else {
+                    // 其他错误
+                    getApp().methods.handleError({ err: err, title: '出错啦', content: `未知错误，请稍后再试 ${err.errMsg}`, reLaunch: false })
+                }
             }
-          }
         });
     },
 
@@ -259,7 +259,7 @@ Page({
             wx.navigateBack();
         } else {
             wx.redirectTo({
-                url: `/pages/index/index${this.data.suffixStr?`?${this.data.suffixStr}`:''}`
+                url: `/pages/index/index${this.data.suffixStr ? `?${this.data.suffixStr}` : ''}`
             });
         }
     },
