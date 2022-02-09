@@ -314,5 +314,10 @@ Page({
                 getApp().methods.handleError({ err: err, title: "出错啦", content: '获取配置详情失败，请稍后再试', reLaunch: true })
             }
         });
+
+        // 强制刷新一次 wx code
+        // 避免获取手机号后，重新获取 code 导致 session key 发生变化，而新 session key 不匹配导致的无法解密手机号码信息的问题
+        // 其他页面由于在页面加载时会运行 wx.login , 所以没有出现这个问题;
+        wx.login({ success: res => console.log(res) });
     },
 })
