@@ -7,8 +7,14 @@ App({
         path: "/user/sso/info",
         data: { token: wx.getStorageSync('sso-token') },
         callback: res => {
-          this.globalData.user = res.data.data.user;
-          this.globalData.userLoaded = true;
+          if (res.data.code === 0) {
+            this.globalData.user = res.data.data.user;
+            this.globalData.userLoaded = true;
+          } else {
+            // 返回错误代表 token 失效, 直接移除 token
+            wx.removeStorage({ key: 'sso-token' });
+            this.globalData.userLoaded = true;
+          }
         },
       });
     } else {
@@ -324,7 +330,7 @@ App({
             // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
             finishEvent: function (data) {
               wx.navigateBack({
-                complete: () =>{
+                complete: () => {
                   getApp().methods.push2crm({ phone: getApp().globalData.user.username, crmEventFormSID, suffix, remark });
                   callback && callback({ phone: getApp().globalData.user.username, openid: getApp().globalData.user.openId });
                 }
