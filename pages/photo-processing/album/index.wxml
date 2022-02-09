@@ -1,6 +1,6 @@
 <!--pages/photo-processing/album/index.wxml-->
 <view bindtap="tapPage">
-    <header title="我的照片" suffixStr="{{suffixStr}}" alwaysShow nav></header>
+    <header title="我的证件照" suffixStr="{{suffixStr}}" alwaysShow nav></header>
     <view class="list">
         <view bindtap="gotoDetail" class="item" data-index="{{index}}" wx:for="{{photos}}" wx:key="index">
             <image class="photo" lazyLoad="true" mode="aspectFit" src="{{item.path}}"></image>
