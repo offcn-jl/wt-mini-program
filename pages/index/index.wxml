@@ -7,5 +7,7 @@
 
 <navigator style="margin-top:4vh;text-align:center;" url="/pages/login-demo/index{{suffixStr?'?'+suffixStr:''}}">登陆及登陆态维护 Demo</navigator>
 
+<navigator style="margin-top:4vh;text-align:center;" url="/pages/login-demo-sso/index{{suffixStr?'?'+suffixStr:''}}">SSO 登陆与登陆态维护演示 Demo</navigator>
+
 <!-- 推广后缀 -->
 <view class="suffix">{{suffixStr}}</view>
