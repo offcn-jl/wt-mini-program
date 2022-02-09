@@ -26,6 +26,7 @@
     "pages/login-demo-sso/index",
     "pages/login-demo/index",
 
+    "pages/user/my/index",
     "pages/user/register/index",
     "pages/agreement/privacy/index",
     "pages/wb/index",
@@ -36,6 +37,22 @@
   ],
   "window":{
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "iconPath": "images/icons/home-333333.png",
+        "selectedIconPath": "images/icons/home-85b85f.png",
+        "pagePath": "pages/photo-processing/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/icons/user-333333.png",
+        "selectedIconPath": "images/icons/user-85b85f.png",
+        "pagePath": "pages/user/my/index",
+        "text": "我"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
