@@ -5,7 +5,7 @@
 </view>
 
 <view class="bottom">
-    <button wx:if="{{!phone}}" class="btn btn-choose-spec" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">选择裁剪规格</button>
+    <button wx:if="{{!phone}}" class="btn btn-choose-spec" bindtap="SSOCheckManual">选择裁剪规格</button>
     <button wx:else bindtap="showModal" class="btn btn-choose-spec">选择裁剪规格</button>
 </view>
 

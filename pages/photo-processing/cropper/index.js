@@ -37,14 +37,14 @@ Page({
 
         // 判断是否是单页模式
         if (wx.getLaunchOptionsSync().scene !== 1154) {
-            getApp().methods.loginCheck({ crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: this.data.crmRemark, callback: ({ phone, openid }) => this.setData({ phone, openid }) }); // 获取登陆状态
+            // 获取登陆状态
+            getApp().methods.SSOCheck({ crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: this.data.crmRemark, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
         }
     },
 
-    // 登陆
-    // 调用公共函数进行登陆操作后，将公共函数返回的登陆信息保存到当前页面的上下文中
-    getPhoneNumber: function (event) {
-        getApp().methods.login({ event, crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: this.data.crmRemark, callback: ({ phone, openid }) => this.setData({ phone, openid }, this.showModal()) });
+    // 手动检查 SSO 登录状态
+    SSOCheckManual: function () {
+        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: this.data.crmRemark, callback: ({ phone, openid }) => this.setData({ phone, openid }, this.showModal()) });
     },
 
     // 选择照片
