@@ -23,7 +23,7 @@
 <view class="cotainer">
     <view class="item" wx:if="{{!user}}" bindtap="SSOCheckManual">
         <image class="icon" mode="widthFix" src="https://appopenoss.offcn.com/statics/image/icons/login-333333.png"></image>
-        <view class="text">登录</view>
+        <view class="text">注册 / 登录</view>
     </view>
 
     <view class="item" wx:else bindtap="logout">

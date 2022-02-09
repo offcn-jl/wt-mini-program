@@ -39,6 +39,7 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
+    "selectedColor": "#85b85f",
     "list": [
       {
         "iconPath": "images/icons/home-333333.png",
