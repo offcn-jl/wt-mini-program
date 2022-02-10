@@ -26,7 +26,7 @@ Page({
             success: res => {
                 wx.hideLoading(); // 隐藏 loading
                 if (res.statusCode !== 200 || res.data.code !== 0) {
-                    getApp().methods.handleError({ err: res, title: "出错啦", content: res.data.msg ? res.data.msg : '退出登录失败，请稍后再试', reLaunch: true })
+                    getApp().methods.handleError({ err: res, title: "出错啦", content: res.data.msg ? res.data.msg : '退出登录失败，请稍后再试'})
                 } else {
                     // 退出成功
                     wx.showToast({ title: '退出登录成功' });
@@ -39,7 +39,7 @@ Page({
             },
             fail: err => {
                 wx.hideLoading() // 隐藏 loading
-                getApp().methods.handleError({ err: err, title: "出错啦", content: '退出登录失败，请稍后再试', reLaunch: true })
+                getApp().methods.handleError({ err: err, title: "出错啦", content: '退出登录失败，请稍后再试' })
             }
         });
 
