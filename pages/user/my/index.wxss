@@ -7,7 +7,7 @@ page {
 .logo {
     width: 40vw;
     display: block;
-    position: fixed;
+    position: absolute;
     top: 6vh;
     left: 2vh;
 }
