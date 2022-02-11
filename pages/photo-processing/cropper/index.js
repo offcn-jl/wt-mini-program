@@ -12,7 +12,7 @@ Page({
         suffix: {}, // 推广后缀
         suffixStr: '', // 推广后缀字符串
 
-        crmRemark: '活动表单ID:92560;中公证件照;裁剪照片;', // CRM 推送备注
+        crmRemark: '活动表单SID:9bf5240a5a0d2150e79a08400706f59a，中公证件照，裁剪照片，', // CRM 推送备注
         crmEventFormSid: '9bf5240a5a0d2150e79a08400706f59a', // CRM 活动表单 SID
 
         openid: '', // 用户 openid

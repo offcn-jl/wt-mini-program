@@ -14,6 +14,7 @@ Page({
         user: null,
 
         crmEventFormSid: '5f4bfedb612c4eade11978c81cc1542f',
+        remark: `活动表单SID:5f4bfedb612c4eade11978c81cc1542f，综合活动平台，用户主动注册，`,
     },
 
     logout: function () {
@@ -49,7 +50,7 @@ Page({
     SSOCheckManual: function () {
         // 修正表单
         getApp().methods.SSOCheckManual({
-            crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${this.data.crmEventFormSid};综合活动平台;用户主动注册;`, callback: ({ phone, openid }) => {
+            crmEventFormSID: this.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: this.data.remark, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
             }
         });

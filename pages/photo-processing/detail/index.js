@@ -40,7 +40,7 @@ Page({
                     if (wx.getLaunchOptionsSync().scene !== 1154) {
                         // 不是单页模式，进行登陆操作
                         // 获取登陆状态
-                        getApp().methods.SSOCheck({crmEventFormSID: res.data.data.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${res.data.data.crmEventFormSid};中公证件照;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid })});
+                        getApp().methods.SSOCheck({crmEventFormSID: res.data.data.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单SID:${res.data.data.crmEventFormSid}，中公证件照，${res.data.data.name}，${options.id}，`, callback: ({ phone, openid }) => this.setData({ phone, openid })});
                     }
                 }
             },
@@ -53,7 +53,7 @@ Page({
 
     // 手动检查 SSO 登录状态
     SSOCheckManual: function (event) {
-        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单ID:${this.data.config.crmEventFormSid};中公证件照;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: {suffix: this.data.suffix, suffixStr: this.data.suffixStr}, remark: `活动表单SID:${this.data.config.crmEventFormSid}，中公证件照，${this.data.config.name}，${this.data.config.id}，`, callback: ({ phone, openid }) => {
             this.setData({ phone, openid });
             if (event.currentTarget.dataset.bindtap === 'album') {
                 this.album();

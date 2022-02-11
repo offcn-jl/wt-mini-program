@@ -47,7 +47,7 @@ Page({
                     if (wx.getLaunchOptionsSync().scene !== 1154) {
                         // 不是单页模式，进行登陆操作
                         // 获取登陆状态
-                        getApp().methods.SSOCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};简易加推;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
+                        getApp().methods.SSOCheck({ crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${res.data.data.crmEventFormSid}，简易加推，${res.data.data.name}，${options.id}，`, callback: ({ phone, openid }) => this.setData({ phone, openid }) });
                     }
                 }
             },
@@ -105,7 +105,7 @@ Page({
     // 登陆后跳转到广告
     goAdvertisingAfterLogin: function (event) {
         getApp().methods.login({
-            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};简易加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${this.data.config.crmEventFormSid}，简易加推，${this.data.config.name}，${this.data.config.id}，`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
                 this.goAdvertising();
             }
@@ -119,7 +119,7 @@ Page({
 
     // 手动检查 SSO 登录状态
     SSOCheckManual: function () {
-        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};简易加推;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+        getApp().methods.SSOCheckManual({ crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${this.data.config.crmEventFormSid}，简易加推，${this.data.config.name}，${this.data.config.id}，`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid })
                 this.view();
             }

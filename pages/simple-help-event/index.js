@@ -47,7 +47,7 @@ Page({
                         // 不是单页模式，进行登陆操作
                         // 获取登陆状态
                         getApp().methods.loginCheck({
-                            crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${res.data.data.crmEventFormSid};简易助力活动;${res.data.data.name};${options.id};`, callback: ({ phone, openid }) => {
+                            crmEventFormSID: res.data.data.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${res.data.data.crmEventFormSid}，简易助力活动，${res.data.data.name}，${options.id}，`, callback: ({ phone, openid }) => {
                                 this.setData({ phone, openid });
                                 // 判断当前是新参与用户还是被邀请用户，并转到对应的页面
                                 // 如果邀请人是当前用户，则不进行跳转
@@ -101,7 +101,7 @@ Page({
     // 调用公共函数进行登陆操作后，将公共函数返回的登陆信息保存到当前页面的上下文中
     getPhoneNumber: function (event) {
         getApp().methods.login({
-            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单ID:${this.data.config.crmEventFormSid};简易助力活动;${this.data.config.name};${this.data.config.id};`, callback: ({ phone, openid }) => {
+            event, crmEventFormSID: this.data.config.crmEventFormSid, suffix: { suffix: this.data.suffix, suffixStr: this.data.suffixStr }, remark: `活动表单SID:${this.data.config.crmEventFormSid}，简易助力活动，${this.data.config.name}，${this.data.config.id}，`, callback: ({ phone, openid }) => {
                 this.setData({ phone, openid });
                 if (event.currentTarget.dataset.bindtap === 'join') {
                     // join
