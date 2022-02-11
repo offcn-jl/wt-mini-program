@@ -228,9 +228,9 @@ App({
     push2crm({ phone, crmEventFormSID, suffix, remark }) {
       if (phone && crmEventFormSID) {
         // 推送数据
-        wx.request({ url: `https://dc.offcn.com:8443/a.gif?mobile=${phone}&sid=${crmEventFormSID}${remark ? `&remark=${remark}` : ''}`, data: suffix && suffix.suffix ? suffix.suffix : {} })
+        wx.request({ url: `https://dc.offcn.com:8443/a.gif?mobile=${phone}&sid=${crmEventFormSID}`, data: suffix && suffix.suffix ? {...suffix.suffix, remark} : {remark} })
         // 记录推送日志
-        wx.request({ url: `${getApp().globalData.config.apis.base.replace('wechat/mini-program', 'crm/push/log')}?mobile=${phone}&sid=${crmEventFormSID}${remark ? `&remark=${remark}` : ''}`, data: suffix && suffix.suffix ? suffix.suffix : {} })
+        wx.request({ url: `${getApp().globalData.config.apis.base.replace('wechat/mini-program', 'crm/push/log')}?mobile=${phone}&sid=${crmEventFormSID}`, data: suffix && suffix.suffix ? {...suffix.suffix, remark} : {remark} })
       }
     },
 
