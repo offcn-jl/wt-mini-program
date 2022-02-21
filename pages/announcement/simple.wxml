@@ -81,7 +81,7 @@
             </view>
             <view class="borderLine"></view>
             <view class="iconCon coverHaibao">
-                <cell id="wx-work" styleType="2" bubbleColor="ff5b5d" bind:startmessage='startmessage' bind:completemessage="completemessage" plugid='{{contactInformation.WechatWorkContactMePlugID}}' />
+                <cell id="wx-work" styleType="2" bubbleColor="ff5b5d" bind:startmessage='startmessage' bind:completemessage="completemessage" plugid="{{contactInformation.WechatWorkContactMePlugID ? contactInformation.WechatWorkContactMePlugID : '97896ab4bdb0448da687855b770f8b08'}}" />
                 <view class="coverText" style="margin-top:-30rpx;">加微信</view>
             </view>
             <view class="borderLine"></view>
