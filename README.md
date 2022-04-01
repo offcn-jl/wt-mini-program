@@ -145,6 +145,7 @@ https://mjl.yixue99.com
 https://mjl.zgjfks.com
 https://mjs.yixue99.com
 https://mjs.zgjfks.com
+https://mjx.yixue99.com
 https://mjx.zgjfks.com
 https://mln.jinrongren.net
 https://mln.zgjfks.com
