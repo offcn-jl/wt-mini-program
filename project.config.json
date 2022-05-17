@@ -31,7 +31,7 @@
             "outputPath": ""
         },
         "enableEngineNative": false,
-        "useIsolateContext": false,
+        "useIsolateContext": true,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -43,8 +43,8 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.2",
-    "appid": "wxb04ce8efcd61db65",
-    "projectname": "公考学习站",
+    "appid": "wx59b01fe628c2f156",
+    "projectname": "%E7%BB%BC%E5%90%88%E6%B4%BB%E5%8A%A8%E5%B9%B3%E5%8F%B0",
     "debugOptions": {
         "hidedInDevtools": []
     },

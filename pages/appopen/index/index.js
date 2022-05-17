@@ -17,7 +17,7 @@ Page({
 
         // 由于目前还没有开发首页, 所以需要从首页跳转到中公证件照的首页
         // 在开发环境可以将下面的代码注释，阻止页面跳转
-        // wx.redirectTo({ url: `/pages/photo-processing/index/index?${(await getApp().methods.getSuffix(options)).suffixStr}` })
+        wx.switchTab({ url: `/pages/appopen/photo-processing/index/index?${(await getApp().methods.getSuffix(options)).suffixStr}` })
     },
 
     /**

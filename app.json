@@ -1,38 +1,33 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/appopen/index/index",
 
-    "pages/cjyy/cjyy",
-    "pages/gkcjcxtd/gkcjcxtd",
-    "pages/gkzgfs/gkzgfs",
+    "pages/appopen/announcement/index",
+    "pages/appopen/announcement/simple",
+    
+    "pages/appopen/simple-help-event/index",
+    
+    "pages/appopen/photo-processing/index/index",
+    "pages/appopen/photo-processing/configs/index",
+    "pages/appopen/photo-processing/detail/index",
+    "pages/appopen/photo-processing/detail/camera/index",
+    "pages/appopen/photo-processing/detail/preview/index",
+    "pages/appopen/photo-processing/detail/preview/save-image/index",
+    "pages/appopen/photo-processing/change-background/index",
+    "pages/appopen/photo-processing/cropper/index",
+    "pages/appopen/photo-processing/cropper/preview/index",
+    "pages/appopen/photo-processing/album/index",
+    "pages/appopen/photo-processing/album/detail/index",
+    
+    "pages/appopen/login-demo-sso/index",
+    "pages/appopen/login-demo/index",
 
-    "pages/announcement/index",
-    "pages/announcement/simple",
-    
-    "pages/simple-help-event/index",
-    
-    "pages/photo-processing/index/index",
-    "pages/photo-processing/configs/index",
-    "pages/photo-processing/detail/index",
-    "pages/photo-processing/detail/camera/index",
-    "pages/photo-processing/detail/preview/index",
-    "pages/photo-processing/detail/preview/save-image/index",
-    "pages/photo-processing/change-background/index",
-    "pages/photo-processing/cropper/index",
-    "pages/photo-processing/cropper/preview/index",
-    "pages/photo-processing/album/index",
-    "pages/photo-processing/album/detail/index",
-    
-    "pages/login-demo-sso/index",
-    "pages/login-demo/index",
-
-    "pages/user/my/index",
-    "pages/user/register/index",
-    "pages/agreement/privacy/index",
-    "pages/wb/index",
-    "pages/sobot/manual",
-    "pages/sobot/auto",
-    "pages/web-view/index",
+    "pages/appopen/user/my/index",
+    "pages/appopen/user/register/index",
+    "pages/appopen/user/agreement/privacy/index",
+    "pages/appopen/sobot/manual",
+    "pages/appopen/sobot/auto",
+    "pages/appopen/web-view/index",
     "handler"
   ],
   "window":{
@@ -44,13 +39,13 @@
       {
         "iconPath": "images/icons/home-333333.png",
         "selectedIconPath": "images/icons/home-85b85f.png",
-        "pagePath": "pages/photo-processing/index/index",
+        "pagePath": "pages/appopen/photo-processing/index/index",
         "text": "首页"
       },
       {
         "iconPath": "images/icons/user-333333.png",
         "selectedIconPath": "images/icons/user-85b85f.png",
-        "pagePath": "pages/user/my/index",
+        "pagePath": "pages/appopen/user/my/index",
         "text": "我"
       }
     ]

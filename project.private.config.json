@@ -14,37 +14,37 @@
             "list": [
                 {
                     "name": "加推-带后缀",
-                    "pathName": "pages/announcement/index",
-                    "query": "id=18&scode=iKN7E4",
+                    "pathName": "pages/appopen/announcement/index",
+                    "query": "id=17&scode=iKN7E4",
                     "scene": null
                 },
                 {
                     "name": "加推-无后缀",
-                    "pathName": "pages/announcement/index",
-                    "query": "id=14",
+                    "pathName": "pages/appopen/announcement/index",
+                    "query": "id=17",
                     "scene": null
                 },
                 {
                     "name": "简易加推-带后缀",
-                    "pathName": "pages/announcement/simple",
+                    "pathName": "pages/appopen/announcement/simple",
                     "query": "id=1&scode=iKN7E4",
                     "scene": null
                 },
                 {
                     "name": "智齿咨询-手动配置模式",
-                    "pathName": "pages/sobot/manual",
+                    "pathName": "pages/appopen/sobot/manual",
                     "query": "channelid=112&groupid=b430774aa0294c458417bbefac417751",
                     "scene": null
                 },
                 {
                     "name": "web-view工具",
-                    "pathName": "pages/web-view/index",
+                    "pathName": "pages/appopen/web-view/index",
                     "query": "src=https://www.offcn.com/zg/wltg/offcnwtbd/&owner=22472&channel=1&orgn=1",
                     "scene": null
                 },
                 {
                     "name": "用户注册-带后缀",
-                    "pathName": "pages/user/register/index",
+                    "pathName": "pages/appopen/user/register/index",
                     "query": "scode=iKN7E4",
                     "scene": null
                 }

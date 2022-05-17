@@ -63,7 +63,7 @@ Page({
         switch (this.data.config.advertisementConfig.type) {
             case 'webview':
                 // 跳转网页
-                wx.navigateTo({ url: `/pages/web-view/index?src=${this.data.config.advertisementConfig.link}${this.data.suffixStr ? this.data.config.advertisementConfig.link.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
+                wx.navigateTo({ url: `../web-view/index?src=${this.data.config.advertisementConfig.link}${this.data.suffixStr ? this.data.config.advertisementConfig.link.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
                 break;
             case 'mini-program-self':
                 // 跳转小程序（ 本小程序内 ）
@@ -114,7 +114,7 @@ Page({
 
     // 查看原文
     view: function () {
-        wx.navigateTo({ url: `/pages/web-view/index?src=${this.data.config.originalLink}${this.data.suffixStr ? this.data.config.advertisementConfig.link.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
+        wx.navigateTo({ url: `../web-view/index?src=${this.data.config.originalLink}${this.data.suffixStr ? this.data.config.advertisementConfig.link.indexOf('?') === -1 ? `?${this.data.suffixStr}` : `&${this.data.suffixStr}` : ''}` });
     },
 
     // 手动检查 SSO 登录状态
@@ -207,8 +207,8 @@ Page({
                         }
 
                         // 生成小程序码
-                        let url = `https://appopen.offcn.com/wechat/mini-program/handler/?appid=${getApp().globalData.config.appid}&username=${getApp().globalData.config.username}&path=pages/announcement/simple&id=${_this.data.config.id}${_this.data.suffixStr ? `&${_this.data.suffixStr}` : ''}`;
-                        const QR = require('../../utils/weapp-qrcode.js');
+                        let url = `https://appopen.offcn.com/wechat/mini-program/handler/?appid=${getApp().globalData.config.appid}&username=${getApp().globalData.config.username}&path=pages/appopen/announcement/simple&id=${_this.data.config.id}${_this.data.suffixStr ? `&${_this.data.suffixStr}` : ''}`;
+                        const QR = require('../../../utils/weapp-qrcode.js');
                         var imgData = QR.drawImg(url, {
                             version: 1,
                             errorCorrectLevel: 'M',
@@ -295,7 +295,7 @@ Page({
 
     // gotoOnlineConsulting 打开在线咨询
     gotoOnlineConsulting: function () {
-        wx.navigateTo({ url: `/pages/sobot/auto${this.data.suffixStr ? `?${this.data.suffixStr}` : ''}` });
+        wx.navigateTo({ url: `../sobot/auto${this.data.suffixStr ? `?${this.data.suffixStr}` : ''}` });
     },
     
     /**

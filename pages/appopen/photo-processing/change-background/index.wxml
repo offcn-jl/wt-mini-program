@@ -11,8 +11,9 @@
         <view bindtap="changeColor" class="color {{item}} {{color==item?'active':''}}" data-color="{{item}}" wx:for="{{colors}}" wx:key="index"></view>
     </view>
     <view class="btn-wrapper">
-        <button wx:if="{{!phone}}" class="btn btn-blue" bindtap="SSOCheckManual">保存</button>
-        <button wx:else bindtap="savePhoto" class="btn btn-blue">保存</button>
+        <!-- <button wx:if="{{!phone}}" class="btn btn-blue" bindtap="SSOCheckManual">保存</button>
+        <button wx:else bindtap="savePhoto" class="btn btn-blue">保存</button> -->
+        <button bindtap="savePhoto" class="btn btn-blue">保存</button>
     </view>
 </view>
 <canvas canvasId="change-bg"></canvas>
